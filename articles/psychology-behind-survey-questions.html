@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An in-depth article about the psychology behind effective survey questions.">
+    <meta name="keywords" content="user feedback, CRO, UX, surveys, psychology, cognitive biases">
+    <meta name="author" content="Sander Volbeda">
+    <title>Omoik - The Psychology Behind Effective Survey Questions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 30% 30%, rgba(138, 43, 226, 0.2), transparent),
+                        radial-gradient(circle at 70% 70%, rgba(0, 191, 255, 0.2), transparent);
+            /* animation: moveBackground 10s infinite alternate ease-in-out; */
+        }
+        @keyframes moveBackground {
+            0% {
+                transform: translateX(-10px) translateY(-10px);
+            }
+            100% {
+                transform: translateX(10px) translateY(10px);
+            }
+        }
+        .cta-button {
+            background: linear-gradient(90deg, #8a2be2, #00bfff);
+            transition: background 0.4s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #00bfff, #8a2be2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center relative p-5">
+    <div class="background"></div>
+    
+    <nav class="fixed top-0 w-full bg-transparent p-4 text-right">
+        <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
+    </nav>
+    
+    <article class="max-w-4xl mt-20 mb-20 px-5 text-left">
+        <h1 class="text-5xl font-bold mb-6">The Psychology Behind Effective Survey Questions</h1>
+        <div class="text-gray-400 mb-4">By <strong><a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank">Sander Volbeda</a></strong>, Experimentation Specialist</div>
+        <img src="../images/blogs/psychology-behind-effect-survey-questions.webp" alt="Survey Psychology Image" class="w-full h-80 object-cover rounded-lg mb-6">
+
+        <p class="text-lg text-gray-300 mb-4">Surveys are a great way to gather insights from your audience. But crafting good survey questions is not easy. The way you ask questions affects the answers you get. This is where psychology plays a big role.</p>
+        <p class="text-lg text-gray-300 mb-12">In this article, we will explore the psychology behind effective survey questions. You will learn how human behavior influences responses and how you can use this knowledge to create better surveys.</p>
+        
+        <h2 class="text-3xl font-bold mt-12 mb-2">Table of Contents</h2>
+        <ul class="list-disc pl-6 text-gray-300 mb-12 text-md ">
+            <li><a href="#why-psychology-matters" class="text-blue-400 underline">Why Psychology Matters in Surveys</a></li>
+            <li><a href="#cognitive-biases" class="text-blue-400 underline">Cognitive Biases That Affect Survey Responses</a>
+                <ul class="list-disc pl-6">
+                    <li><a href="#framing-effect" class="text-blue-400 underline">1. Framing Effect</a></li>
+                    <li><a href="#social-desirability" class="text-blue-400 underline">2. Social Desirability Bias</a></li>
+                    <li><a href="#acquiescence-bias" class="text-blue-400 underline">3. Acquiescence Bias</a></li>
+                    <li><a href="#priming-effect" class="text-blue-400 underline">4. Priming Effect</a></li>
+                </ul>
+            </li>
+            <li><a href="#crafting-survey-questions" class="text-blue-400 underline">How to Craft Psychology-Driven Survey Questions</a></li>
+                <ul class="list-disc pl-6">
+                    <li><a href="#neural-wording" class="text-blue-400 underline">1. Use Neutral Wording</a></li>
+                    <li><a href="#questions-simple" class="text-blue-400 underline">2. Keep Questions Simple</a></li>
+                    <li><a href="#double-barreled-questions" class="text-blue-400 underline">3. Avoid Double-Barreled Questions</a></li>
+                    <li><a href="#right-response" class="text-blue-400 underline">4. Use the Right Response Scales</a></li>
+                    <li><a href="#easy-answer" class="text-blue-400 underline">5. Make It Easy to Answer</a></li>
+                </ul>
+            <li><a href="#conclusion" class="text-blue-400 underline">Conclusion</a></li>
+        </ul>
+        
+        <h2 id="why-psychology-matters" class="text-3xl font-bold mt-10 mb-4">Why Psychology Matters in Surveys</h2>
+        <p class="text-lg text-gray-300 mb-4">People don’t always respond logically to survey questions. Their answers are influenced by emotions, past experiences, and question framing. Ignoring these factors can lead to unreliable data.</p>
+        <p class="text-lg text-gray-300 mb-4">For example, if you ask, "Do you think our product is excellent?" people might feel pressured to agree. But if you ask, "How would you rate our product?" you allow for a more neutral response.</p>
+        <p class="text-lg text-gray-300 mb-2">Understanding psychology helps you:</p>
+        <ul class="list-disc pl-6 text-gray-300 mb-12 text-lg ">
+            <li>Use neutral wording</li>
+            <li>Keep questions simple</li>
+            <li>Avoid double-barreled questions</li>
+            <li>Use balanced response scales</li>
+            <li>Ensure clear answer options</li>
+        </ul>
+        
+        <h2 id="cognitive-biases" class="text-3xl font-bold mt-10 mb-4">Cognitive Biases That Affect Survey Responses</h2>
+        <h3 id="framing-effect" class="text-2xl font-bold mb-3">1. Framing Effect</h3>
+        <p class="text-lg text-gray-300 mb-4">People react differently to the same information depending on how it is presented. This is called the framing effect.</p>
+        <p class="text-lg text-gray-300 mb-2 bold">Example:</p>
+        <ul class="list-disc pl-6 text-gray-300 mb-6 text-lg ">
+            <li><b>Positive framing:</b> "90% of users love this product!"</li>
+            <li><b>Negative framing:</b> "10% of users dislike this product."</li>
+        </ul>
+        <p class="text-lg text-gray-300 mb-4">Even though both statements give the same information, the first one sounds more appealing. In surveys, the way you phrase a question can change how people answer.</p> 
+        <p class="text-lg text-gray-300 mb-12">Research on the framing effect: <a href="https://sites.stat.columbia.edu/gelman/surveys.course/TverskyKahneman1981.pdf" target="_blank">Kahneman & Tversky’s</a></p>
+        
+        <h3 id="social-desirability" class="text-2xl font-bold mb-3">2. Social Desirability Bias</h3>
+        <p class="text-lg text-gray-300 mb-4">People want to be seen in a good light. They may give answers that make them look better instead of saying what they truly feel.</p>
+        <p class="text-lg text-gray-300 mb-2 bold">Example:</p>
+        <ul class="list-disc pl-6 text-gray-300 mb-6 text-lg ">
+            <li><b>Biased question:</b> "How often do you exercise each week?" (This makes people feel they should say a high number.)"</li>
+            <li><b>Better question:</b> "In the last month, how many times did you exercise?" (This makes it easier to give an honest answer.)</li>
+        </ul>
+        <p class="text-gray-300 mb-12">Research on social desirability bias: <a href="https://www.tilburguniversity.edu/current/press-releases/how-prevent-social-desirability-bias-surveys" target="_blank">Rik Pieters</a></p>
+        
+        <h3 id="acquiescence-bias" class="text-2xl font-bold mb-3">3. Acquiescence Bias</h3>
+        <p class="text-gray-300 mb-4">Some people tend to agree with statements no matter what. This is called acquiescence bias. If you ask, <b>"Do you agree that our service is helpful?"</b> many people may just say <b>"yes"</b> to be polite.</p>
+        <p class="text-gray-300 mb-4"> Fix: Use balanced scales. Instead of yes/no, offer multiple choices like:</p>
+        <ul class="list-disc pl-6 text-gray-300 mb-6 text-lg ">
+            <li>Very helpful</li>
+            <li>Somewhat helpful</li>
+            <li>Neutral</li>
+            <li>Not very helpful</li>
+            <li>Not helpful at all</li>
+        </ul>
+        <p class="text-lg text-gray-300 mb-12">Research on acquiescence bias: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563215302788" target="_blank">O. Kuru, J.Pasek</a></p> 
+        
+        <h3 id="priming-effect" class="text-2xl font-bold mb-3">4. Priming Effect</h3>
+        <p class="text-lg text-gray-300 mb-4">The order of your questions affects answers. If you ask, <b>"How satisfied are you with our customer service?"</b> before <b>"How satisfied are you with our company overall?"</b>, the first answer may influence the second.</p>
+        <p class="text-lg text-gray-300 mb-4">To overcome this effect, you can randomize question order to reduce priming.</p>
+        <p class="text-lg text-gray-300 mb-4">Learn more about priming: <a href="https://www.researchgate.net/publication/270539134_Understanding_Priming_Effects_in_Social_Psychology_What_is_Social_Priming_and_How_does_it_Occur" target="_blank">Daniel C. Molden</a></p> 
+        
+        <h2 id="crafting-survey-questions" class="text-3xl font-bold mt-10 mb-4">How to Craft Psychology-Driven Survey Questions</h2>
+        <p class="text-lg text-gray-300 mb-12">Now that we understand common biases, let’s look at how to create better survey questions.</p>
+
+        <h3 id="neutral-wording" class="text-2xl font-bold mb-3">1. Use Neutral Wording</h3> 
+        <p class="text-lg text-gray-300 mb-4">Avoid leading questions that push respondents toward a certain answer.</p>
+        <ul class="pl-2 text-gray-300 mb-12 text-lg ">
+            <li>❌ <b>Bad example:</b> "How much do you love our new feature?"</li>
+            <li>✅ <b>Better example:</b> "What do you think of our new feature?"</li>
+        </ul>
+
+        <h3 id="questions-simple" class="text-2xl font-bold mb-3">2. Keep Questions Simple</h3> 
+        <p class="text-lg text-gray-300 mb-4">Long or complex questions confuse people.</p>
+        <ul class="pl-2 text-gray-300 mb-12 text-lg ">
+            <li>❌ <b>Bad example:</b> "How would you describe the user-friendliness and efficiency of our platform?"</li>
+            <li>✅ <b>Better example:</b> "How easy is our platform to use?"</li>
+        </ul>
+
+        <h3 id="double-barreled-questions" class="text-2xl font-bold mb-3">3. Avoid Double-Barreled Questions</h3> 
+        <p class="text-lg text-gray-300 mb-4">Double-barreled questions ask two things at once, making it hard to answer.</p>
+        <ul class="pl-2 text-gray-300 mb-12 text-lg ">
+            <li>❌ <b>Bad example:</b> "Was our website easy to navigate and did you find what you were looking for?"</li>
+            <li>✅ <b>Better example:</b> Split into two questions:</li>
+            <ul class="list-decimal pl-6 py-2 ml-4 text-gray-300 mb-6 text-lg ">
+                <li>"Was our website easy to navigate?"</li>
+                <li>"Did you find what you were looking for?"</li>
+            </ul>
+        </ul>
+
+        <h3 id="right-response" class="text-2xl font-bold mb-3">4. Use the Right Response Scales</h3> 
+        <p class="text-lg text-gray-300 mb-4">Scales should be balanced and clear.</p>
+        <p class="text-lg text-gray-300 mb-4">❌ <b>Bad example:</b></p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-6 text-lg ">
+            <li>Yes</li>
+            <li>No</li>
+            <li>Maybe</li>
+        </ul>
+        <p class="text-lg text-gray-300 mb-4">✅ <b>Better example:</b></p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-12 text-lg ">
+            <li>Very satisfied</li>
+            <li>Somewhat satisfied</li>
+            <li>Neutral</li>
+            <li>Somewhat dissatisfied</li>
+            <li>Very dissatisfied</li>
+        </ul>
+        
+        <h3 id="easy-answer" class="text-2xl font-bold mb-3">5. Make It Easy to Answer</h3> 
+        <p class="text-lg text-gray-300 mb-4">Use answer options that cover all possibilities.</p>
+        <p class="text-lg text-gray-300 mb-4">❌ <b>Bad example:</b> "What is your age?"</p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-6 text-lg ">
+            <li>18-25</li>
+            <li>25-35</li>
+            <li>35-45</li>
+            <li>45+</li>
+        </ul>
+        <p class="text-lg text-gray-300 mb-4">(The 25- and 35-year-olds don’t know which to pick.)</p>
+        <p class="text-lg text-gray-300 mb-4">✅ <b>Better example:</b></p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-12 text-lg ">
+            <li>Under 18</li>
+            <li>18-24</li>
+            <li>25-34</li>
+            <li>35-44</li>
+            <li>45+</li>
+        </ul>
+        
+        <h2 id="conclusion" class="text-3xl font-bold mt-10 mb-4">Conclusion</h2>
+        <p class="text-lg text-gray-300 mb-4">Good survey design is not just about asking questions—it’s about understanding how people think.</p>
+        <p class="text-lg text-gray-300 mb-4">Psychology plays a key role in shaping responses, and small changes in wording can lead to better data.</p>
+        <p class="text-lg text-gray-300 mb-4">To improve your surveys:</p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-6 text-lg ">
+            <li>Be aware of cognitive biases.</li>
+            <li>Use neutral and clear wording.</li>
+            <li>Avoid leading or double-barreled questions.</li>
+            <li>Provide well-structured answer options.</li>
+            <li>Randomize question order when needed.</li>
+        </ul>
+        <p class="text-lg text-gray-300 mb-12">By applying these principles, you will collect more reliable data and make better decisions.</p>
+
+        <p class="text-lg text-gray-300 mb-4">Further reading:</p>
+        <ul class="list-disc pl-6 py-2 ml-4 text-gray-300 mb-12 text-lg ">
+            <li><a href="#">The Influence of Question Wording on Survey Responses</a></li>
+            <li><a href="#">Best Practices for Survey Research</a></li>
+        </ul>
+
+        <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
+    </article>
+    
+    <footer class="mt-20 py-5 text-center bg-gray-800 w-full">
+        <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3>
+        <form class="flex flex-col items-center">
+            <input type="email" placeholder="Enter your email" class="p-2 rounded-md text-black mb-3" required>
+            <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Subscribe</button>
+        </form>
+        <p class="text-sm text-gray-400 mt-5">&copy; 2025 Omoik. All rights reserved.</p>
+    </footer>
+</body>
+</html>
