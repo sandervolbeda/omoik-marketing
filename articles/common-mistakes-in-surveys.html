@@ -45,8 +45,14 @@
 <body class="bg-gray-900 text-white flex flex-col items-center justify-center relative p-5">
     <div class="background"></div>
     
-    <nav class="fixed top-0 w-full bg-transparent p-4 text-right">
-        <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
+    <nav class="fixed top-0 w-full bg-[#201C3E]/80 backdrop-blur-lg py-4 px-4 z-50 h-16 flex items-center justify-between shadow-lg">
+        <a href="../index.html" aria-label="Go to homepage" class="text-white font-extrabold text-lg focus-visible:ring-2 focus-visible:ring-white px-2">
+            Omoik
+        </a>
+    
+        <a href="https://forms.gle/49sgW6nXU26wuBe79" target="_blank" aria-label="Join Early Access" class="cta-button text-white px-6 py-2 rounded-full font-bold shadow-lg bg-purple-700 hover:bg-purple-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition">
+            Join Early Access
+        </a>
     </nav>
     
     <article class="max-w-4xl mt-20 mb-20 px-5 text-left">
@@ -179,12 +185,22 @@
         <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
     </article>
     
-    <footer class="mt-20 py-5 text-center bg-gray-800 w-full">
-        <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3>
-        <form class="flex flex-col items-center">
-            <input type="email" placeholder="Enter your email" class="p-2 rounded-md text-black mb-3" required>
-            <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Subscribe</button>
-        </form>
+    <footer class="mt-20 py-5 text-center bg-gray-800 w-full" aria-label="Footer with newsletter subscription">
+        <!-- <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3> -->
+        <!-- <form class="flex flex-col items-center">
+          <label for="newsletter-email" class="sr-only">Email Address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            class="p-2 rounded-md text-black mb-3"
+            required
+          >
+          <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition transform hover:scale-110">
+            Subscribe
+          </button>
+        </form> -->
         <p class="text-sm text-gray-400 mt-5">&copy; 2025 Omoik. All rights reserved.</p>
     </footer>
 </body>

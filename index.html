@@ -45,87 +45,164 @@
 <body class="bg-gray-900 text-white flex flex-col items-center justify-center relative p-5">
     <div class="background"></div>
     
-    <nav class="fixed top-0 w-full bg-transparent p-4 text-right">
-        <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
-    </nav>
+    <nav class="fixed top-0 w-full bg-[#201C3E]/80 backdrop-blur-lg py-4 px-4 z-50 h-16 flex items-center justify-between shadow-lg">
+        <a href="index.html" aria-label="Go to homepage" class="text-white font-extrabold text-lg focus-visible:ring-2 focus-visible:ring-white px-2">
+            Omoik
+        </a>
     
-    <section class="text-center z-10 mt-20 h-[70vh] flex flex-col justify-center">
-        <h1 class="text-6xl font-bold mb-6">Omoik</h1>
-        <p class="text-lg max-w-lg mx-auto mb-6" aria-label="Introduction">Omoik helps you collect valuable user feedback. It’s smart. It’s non-intrusive. Designed for marketers and UX experts. Turn insights into action.</p>
-        <a href="#early-access" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">Join Early Access</a>
+        <div class="flex items-center space-x-4">
+            <a href="https://forms.gle/49sgW6nXU26wuBe79" target="_blank" aria-label="Join Early Access"
+                class="cta-button text-white px-6 py-2 rounded-full font-bold shadow-lg bg-purple-700 hover:bg-purple-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition">
+                Join Early Access
+            </a>
+    
+            <a href="https://app.omoik.com/login" target="_blank" aria-label="Go to Omoik login page"
+                class="text-white text-sm font-medium hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white transition">
+                Login
+            </a>
+        </div>
+    </nav>
+        
+    <section class="text-center z-10 mt-20 h-[70vh] flex flex-col justify-center" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="text-6xl font-bold mb-6">Omoik</h1>
+        <p class="text-lg max-w-lg mx-auto mb-6">
+            Omoik helps you collect valuable user feedback. It’s smart. It’s non-intrusive. Designed for marketers and UX experts. Turn insights into action.
+        </p>
+        <a href="https://forms.gle/49sgW6nXU26wuBe79" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">
+            Join Early Access
+        </a>
     </section>
 
-    <section class="mt-20 mb-20 px-5 max-w-5xl text-center">
-        <h2 class="text-4xl font-bold mb-6">Our Latest Insights</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
-                <img src="blog1.jpg" alt="Blog image" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-bold mb-3">Understanding User Behavior</h3>
-                <p class="text-gray-300 flex-grow">Discover key insights into how users interact with your site and optimize your experience.</p>
-                <div class="mt-4 text-gray-400">By <strong><a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank">Sander Volbeda</a></strong>, Experimentation Specialist</div>
+    <section class="mt-20 mb-20 px-5 max-w-5xl text-center" aria-labelledby="roadmap-heading">
+        <h2 id="roadmap-heading" class="text-4xl font-bold mb-6">Our Roadmap</h2>
+    <p class="text-gray-300 mb-6">Here’s what’s coming next for Omoik.</p>
+    
+    <!-- First row of roadmap items -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
+        <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 1 - Alpha Testing</h3>
+            <p class="text-gray-300 mb-2">
+                Launch early access to selected users. Gather feedback and refine features on-site slide-in.
+            </p>
+            <!-- Removed commented-out code -->
+            <span class="text-blue-400 font-bold mt-auto" role="img" aria-label="In Progress">
+                🚀 In Progress
+            </span>
+            </div>
+            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 2 - Public Launch</h3>
+            <p class="text-gray-300 mb-2">
+                Release Omoik to a wider audience with core features and analytics.
+            </p>
+            <span class="text-yellow-400 font-bold mt-auto" role="img" aria-label="Coming Soon">
+                ⏳ Coming Soon
+            </span>
+            </div>
+            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 3 - Additional Survey Types</h3>
+            <p class="text-gray-300 mb-2">
+                More on-page survey types will be available.
+            </p>
+            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
+                🔜 Planned
+            </span>
+            </div>
+        </div>
+        
+        <!-- Second row of roadmap items -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6" role="list">
+            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 4 - Privacy & Accessibility</h3>
+            <p class="text-gray-300 mb-2">
+                Additional focus on privacy and accessibility for all users.
+            </p>
+            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
+                🔜 Planned
+            </span>
+            </div>
+            <!-- Commented-out roadmap item removed for clarity -->
+            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 5 - Advanced Features</h3>
+            <p class="text-gray-300 mb-2">
+                Enhancing AI-powered insights, integrations, and customization options.
+            </p>
+            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
+                🔜 Planned
+            </span>
+            </div>
+            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <h3 class="text-2xl font-bold mb-2">Phase 6 - AI Recommendations</h3>
+            <p class="text-gray-300 mb-2">
+                Leverage machine learning for smart recommendations and auto-generated insights.
+            </p>
+            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Future">
+                🔜 Future
+            </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-20 mb-20 px-5 max-w-5xl text-center" aria-labelledby="insights-heading">
+        <h2 id="insights-heading" class="text-4xl font-bold mb-6">Our Latest Insights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
+            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
+                <img src="images/blogs/psychology-behind-effect-survey-questions.webp" alt="Image for Understanding User Behavior" class="w-full h-40 object-cover rounded-lg">
+                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">The Psychology Behind Effective Survey Questions</h3>
+                <p class="text-gray-300 px-6 flex-grow">
+                    Surveys are a great way to gather insights from your audience. The way you ask questions affects the answers you get.
+                </p>
+                <a href="articles/psychology-behind-survey-questions.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
+                    Read article ...
+                </a>
+                <div class="mt-4 px-6 pb-6 text-gray-400">
+                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
+                </div>
             </article>
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
-                <img src="blog2.jpg" alt="Blog image" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-bold mb-3">The Power of Feedback</h3>
-                <p class="text-gray-300 flex-grow">Learn why collecting user feedback is crucial for making data-driven decisions.</p>
-                <div class="mt-4 text-gray-400">By <strong><a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank">Sander Volbeda</a></strong>, Experimentation Specialist</div>
+            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
+                <img src="blog2.jpg" alt="Image for The Power of Feedback" class="w-full h-40 object-cover rounded-lg">
+                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">Common Mistakes in Surveys That Ruin Your Data (And How to Fix Them)</h3>
+                <p class="text-gray-300 px-6 flex-grow">
+                    Poorly designed surveys can lead to unreliable data, misleading conclusions, and bad business decisions. 
+                </p>
+                <a href="articles/common-mistakes-in-surveys.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
+                    Read article ...
+                </a>
+                <div class="mt-4 px-6 pb-6 text-gray-400">
+                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
+                </div>
             </article>
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
-                <img src="blog3.jpg" alt="Blog image" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-bold mb-3">Boosting Conversions with CRO</h3>
-                <p class="text-gray-300 flex-grow">See how conversion rate optimization can increase engagement and revenue.</p>
-                <div class="mt-4 text-gray-400">By <strong><a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank">Sander Volbeda</a></strong>, Experimentation Specialist</div>
+            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
+                <img src="blog3.jpg" alt="Image for Boosting Conversions with CRO" class="w-full h-40 object-cover rounded-lg">
+                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">Boosting Conversions with CRO</h3>
+                <p class="text-gray-300 px-6 flex-grow">
+                    See how conversion rate optimization can increase engagement and revenue.
+                </p>
+                <a href="articles/psychology-behind-survey-questions.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
+                    Read article ...
+                </a>
+                <div class="mt-4 px-6 pb-6 text-gray-400">
+                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
+                </div>
             </article>
         </div>
     </section>
-    
-    <section class="mt-20 mb-20 px-5 max-w-5xl text-center">
-        <h2 class="text-4xl font-bold mb-6">Our Roadmap</h2>
-        <p class="text-gray-300 mb-6">Here’s what’s coming next for Omoik.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 1 - Alpha Testing</h3>
-                <p class="text-gray-300 mb-2">Launch early access to selected users. Gather feedback and refine features on-site slide-in.</p>
-                <!-- <span class="text-purple-400 font-bold mt-auto">✔ Completed</span> -->
-                <span class="text-blue-400 font-bold mt-auto">🚀 In Progress</span> 
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 2 - Public Launch</h3>
-                <p class="text-gray-300 mb-2">Release Omoik to a wider audience with core features and analytics.</p>
-                <span class="text-yellow-400 font-bold mt-auto">⏳ Coming Soon</span>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 3 - Additional Survey Types</h3>
-                <p class="text-gray-300 mb-2">More on-page survey types will be available.</p> 
-                <!-- <span class="text-yellow-400 font-bold mt-auto">🔜 Planned</span> -->
-                <span class="text-gray-400 font-bold mt-auto">🔜 Planned</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 4 - Advanced Features</h3>
-                <p class="text-gray-300 mb-2">Enhancing AI-powered insights, integrations, and customization options.</p>
-                <span class="text-gray-400 font-bold mt-auto">🔜 Planned</span>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 5 - API & Integrations</h3>
-                <p class="text-gray-300 mb-2">Integrate Omoik with existing tools and extend its functionality.</p>
-                <span class="text-gray-400 font-bold mt-auto">🔜 Planned</span>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-                <h3 class="text-2xl font-bold mb-2">Phase 6 - AI Recommendations</h3>
-                <p class="text-gray-300 mb-2">Leverage machine learning for smart recommendations and auto-generated insights.</p>
-                <span class="text-gray-400 font-bold mt-auto">🔜 Future</span>
-            </div>
-        </div>
-    </section> 
-    
-    <footer class="mt-20 py-5 text-center bg-gray-800 w-full">
-        <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3>
-        <form class="flex flex-col items-center">
-            <input type="email" placeholder="Enter your email" class="p-2 rounded-md text-black mb-3" required>
-            <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition transform hover:scale-110">Subscribe</button>
-        </form>
+
+    <footer class="mt-20 py-5 text-center bg-gray-800 w-full" aria-label="Footer with newsletter subscription">
+        <!-- <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3> -->
+        <!-- <form class="flex flex-col items-center">
+          <label for="newsletter-email" class="sr-only">Email Address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            class="p-2 rounded-md text-black mb-3"
+            required
+          >
+          <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition transform hover:scale-110">
+            Subscribe
+          </button>
+        </form> -->
         <p class="text-sm text-gray-400 mt-5">&copy; 2025 Omoik. All rights reserved.</p>
     </footer>
 </body>
