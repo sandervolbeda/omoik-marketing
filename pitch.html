@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omoik helpt je waardevolle gebruikersfeedback te verzamelen zonder impact op privacy en snelheid.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Omoik - Gebruikersfeedback zonder gedoe</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .cta-button { background: linear-gradient(90deg, #8a2be2, #00bfff); transition: background 0.4s ease-in-out; }
+        .cta-button:hover { background: linear-gradient(90deg, #00bfff, #8a2be2); }
+        .countdown { font-size: 1.5rem; font-weight: bold; color: #ffcc00; }
+        .trusted-logos img { max-height: 50px; margin: 0 10px; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: #fff; padding: 20px; border-radius: 10px; text-align: center; color: #000; max-width: 400px; }
+        .modal-close { cursor: pointer; font-size: 20px; color: #666; }
+        .banner { background: #8a2be2; color: white; text-align: center; padding: 10px; font-weight: bold; }
+        .banner a { text-decoration: underline; cursor: pointer; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col justify-center">
+    <div class="banner">
+        🎁 <a onclick="openModal()">Ontvang gratis: De beste vragen om aan je websitebezoekers te stellen!</a> 
+    </div>
+
+    <nav class="w-full py-4 px-4 z-50 h-20 flex items-center justify-between mx-auto max-w-7xl">
+        <a href="index.html" aria-label="Go to homepage" class="text-white font-extrabold text-lg focus-visible:ring-2 focus-visible:ring-white px-2 flex flex-row items-center">
+            <img src="images/omoik-logo-small.png" alt="Omoik logo looking like a owl" class="mr-2" style="max-height:50px;">
+            Omoik
+        </a>
+    
+        <div class="flex items-center space-x-4">
+            
+        </div>
+    </nav>
+
+    <header class="text-center mt-10 p-5">
+        <h1 class="text-5xl font-bold">Verzamel gebruikersfeedback zonder cookies</h1>
+        <p class="text-lg mt-4 max-w-xl mx-auto">Privacyvriendelijk, toegankelijk en razendsnel. Verzamel feedback zonder je website te vertragen.</p>
+        
+        <!-- Video Pitch -->
+        <div class="mt-6 max-w-xl mx-auto">
+            <video controls class="w-full rounded-lg shadow-lg">
+                <source src="video/omoik-pitch.mp4" type="video/mp4">
+                Je browser ondersteunt deze video niet.
+            </video>
+        </div>
+        
+        <a href="#pricing" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Start voor €25</a>
+        
+        <!-- Countdown Timer -->
+        <p class="mt-4 countdown" id="countdown">Aanbieding verloopt over: -- dagen -- uur -- min -- sec</p>
+    </header>
+
+    <div class="container max-w-7xl mx-auto">
+        <!-- Autoriteit & Social Proof -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-3xl font-bold">Vertrouwd door professionals</h2>
+            <div class="trusted-logos flex justify-center items-center mt-6">
+                <img src="images/logos/logo-oma.png" alt="OMA logo">
+                <img src="images/logos/logo-marketing.png" alt="Marketing agency logo">
+                <img src="images/logos/logo-uxdesign.png" alt="UX Design bedrijf logo">
+            </div>
+        </section>
+
+        <!-- Wat krijg je met Omoik? -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-4xl font-bold">Wat krijg je met Omoik?</h2>
+            <div class="mt-6 max-w-4xl mx-auto text-lg">
+                <ul class="list-disc text-left mx-auto inline-block">
+                    <li>Direct inzicht in waarom bezoekers afhaken op je website</li>
+                    <li>Feedback van echte gebruikers zonder dat je hen stoort</li>
+                    <li>Geen impact op je websitesnelheid of privacy van gebruikers</li>
+                    <li>Toegang tot AI-analyses en automatische inzichten (binnenkort beschikbaar)</li>
+                    <li>Eenvoudige implementatie via GTM of direct in de footer</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Gratis bonus pop-up -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-3xl font-bold">Gratis Bonus: De beste vragen voor je websitebezoekers</h2>
+            <p class="mt-4 max-w-3xl mx-auto">Download onze gratis PDF met een overzicht van de meest effectieve vragen die je kunt stellen aan je websitebezoekers om direct waardevolle inzichten te verzamelen.</p>
+            <button onclick="openModal()" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Download gratis PDF</button>
+        </section>
+
+        <!-- Sociale Bewijskracht & Commitment -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-4xl font-bold">Wat zeggen onze klanten?</h2>
+            <div class="mt-6 max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+                <p class="italic text-lg">"Omoik helpt ons snel waardevolle inzichten te verzamelen zonder onze website te vertragen."</p>
+                <cite class="block mt-4 font-bold">- OMA (Online Marketing Agency)</cite>
+            </div>
+            <div class="mt-6 max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+                <p class="italic text-lg">"Binnen een week zagen we al verbeteringen op onze website door de inzichten die we met Omoik kregen!"</p>
+                <cite class="block mt-4 font-bold">- UX Specialist, Digital Agency</cite>
+            </div>
+        </section>
+
+        <!-- Consistentie & Commitment (Act Now) -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-4xl font-bold">Waarom nu starten?</h2>
+            <p class="text-lg mt-4 max-w-xl mx-auto">Omoik groeit snel en de prijzen zullen binnenkort stijgen. Door nu in te stappen, profiteer je van de introductieprijs en krijg je exclusieve toegang tot nieuwe functies.</p>
+            <a href="#pricing" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Claim jouw plek nu</a>
+        </section>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const deadline = new Date("2025-04-15T23:59:59").getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Aanbieding verloopt over: ${days} dagen ${hours} uur ${minutes} min ${seconds} sec`;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        function openModal() {
+            document.getElementById("bonusModal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("bonusModal").style.display = "none";
+        }
+    </script>
+
+    <footer class="mt-16 text-center text-gray-400 py-6 bg-gray-800">
+        <p>&copy; 2025 Omoik. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>
