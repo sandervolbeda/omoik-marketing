@@ -16,11 +16,18 @@
         .countdown { font-size: 1.5rem; font-weight: bold; color: #ffcc00; }
         .trusted-logos img { max-height: 50px; margin: 0 10px; }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; }
-        .modal-content { background: #fff; padding: 20px; border-radius: 10px; text-align: center; color: #000; max-width: 400px; }
-        .modal-close { cursor: pointer; font-size: 20px; color: #666; }
+        .modal-content { background: #fff; padding: 20px; border-radius: 10px; text-align: left; color: #000; max-width: 400px; position: relative; }
+        .modal-close { cursor: pointer; font-size: 20px; color: #666; position: absolute; top: 10px; right: 15px; }
+        .modal label { display: block; font-weight: bold; margin-top: 10px; }
+        .modal input { border: 1px solid #ccc; padding: 8px; width: 100%; border-radius: 5px; }
+        .modal-checkbox { display: flex; align-items: center; margin-top: 10px; }
+        .modal-checkbox input { width: auto; margin-right: 10px; }
         .banner { background: #8a2be2; color: white; text-align: center; padding: 10px; font-weight: bold; }
         .banner a { text-decoration: underline; cursor: pointer; }
+        .faq-item { cursor: pointer; background: #222; padding: 10px; margin-bottom: 5px; border-radius: 5px; }
+        .faq-answer { display: none; padding: 10px; background: #333; margin-top: 5px; border-radius: 5px; }
     </style>
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8c776e87580fc582336b41b37/76754d444e0d51305cd7e90a9.js");</script>
 </head>
 <body class="bg-gray-900 text-white flex flex-col justify-center">
     <div class="banner">
@@ -38,7 +45,7 @@
         </div>
     </nav>
 
-    <header class="text-center mt-10 p-5">
+    <header class="text-center mt-10 p-5 max-w-7xl mx-auto">
         <h1 class="text-5xl font-bold">Verzamel gebruikersfeedback zonder cookies</h1>
         <p class="text-lg mt-4 max-w-xl mx-auto">Privacyvriendelijk, toegankelijk en razendsnel. Verzamel feedback zonder je website te vertragen.</p>
         
@@ -74,9 +81,10 @@
                 <ul class="list-disc text-left mx-auto inline-block">
                     <li>Direct inzicht in waarom bezoekers afhaken op je website</li>
                     <li>Feedback van echte gebruikers zonder dat je hen stoort</li>
-                    <li>Geen impact op je websitesnelheid of privacy van gebruikers</li>
-                    <li>Toegang tot AI-analyses en automatische inzichten (binnenkort beschikbaar)</li>
+                    <li>Nauwelijks impact op je websitesnelheid</li>
+                    <li>Privacy garantie van gebruikers</li>
                     <li>Eenvoudige implementatie via GTM of direct in de footer</li>
+                    <li>Toegang tot automatische inzichten middels machine learning (binnenkort beschikbaar)</li>
                 </ul>
             </div>
         </section>
@@ -101,12 +109,88 @@
             </div>
         </section>
 
-        <!-- Consistentie & Commitment (Act Now) -->
+        <!-- Vergelijkingstabel -->
         <section class="mt-16 text-center p-5">
-            <h2 class="text-4xl font-bold">Waarom nu starten?</h2>
-            <p class="text-lg mt-4 max-w-xl mx-auto">Omoik groeit snel en de prijzen zullen binnenkort stijgen. Door nu in te stappen, profiteer je van de introductieprijs en krijg je exclusieve toegang tot nieuwe functies.</p>
-            <a href="#pricing" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Claim jouw plek nu</a>
+            <h2 class="text-4xl font-bold">Hoe verhoudt Omoik zich tot andere tools?</h2>
+            <div class="mt-6 max-w-4xl mx-auto">
+                <table class="w-full text-left border-collapse border border-gray-700">
+                    <thead>
+                        <tr class="bg-gray-800">
+                            <th class="p-3">Functie</th>
+                            <th class="p-3">Omoik</th>
+                            <th class="p-3">Andere tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border border-gray-700">
+                            <td class="p-3">Privacy-vriendelijk (geen cookies)</td>
+                            <td class="p-3 text-green-400">✅ Ja</td>
+                            <td class="p-3 text-red-400">❌ Nee</td>
+                        </tr>
+                        <tr class="border border-gray-700">
+                            <td class="p-3">Focus op accessibility</td>
+                            <td class="p-3 text-green-400">✅ Ja</td>
+                            <td class="p-3 text-red-400">❌ Nee</td>
+                        </tr>
+                        <tr class="border border-gray-700">
+                            <td class="p-3">Minimale impact op laadsnelheid</td>
+                            <td class="p-3 text-green-400">✅ Ja</td>
+                            <td class="p-3 text-red-400">❌ Vaak traag</td>
+                        </tr>
+                        <tr class="border border-gray-700">
+                            <td class="p-3">Persoonlijke ondersteuning</td>
+                            <td class="p-3 text-green-400">✅ Ja</td>
+                            <td class="p-3 text-red-400">❌ Geen directe support</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
+
+        <!-- FAQ Sectie -->
+        <section class="mt-16 text-center p-5">
+            <h2 class="text-4xl font-bold">Veelgestelde vragen</h2>
+            <p class="mt-6">Hieronder staan een aantal vragen waarvan wij denken dat het handig is om vooraf al te weten.</p>
+            <div class="mt-6 max-w-4xl mx-auto text-left">
+                <div class="faq-item" onclick="toggleFaq(0)">
+                    <p class="font-bold">Hoe moeilijk is het om Omoik te installeren?</p>
+                    <div class="faq-answer">Omoik is eenvoudig te implementeren. Je kunt het script toevoegen via Google Tag Manager of direct in de footer van je website. Dit duurt slechts een paar minuten.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(1)">
+                    <p class="font-bold">Hoe waarborgt Omoik privacy?</p>
+                    <div class="faq-answer">Wij gebruiken geen cookies. Alle gegevens worden lokaal opgeslagen op het apparaat van de bezoeker. Data wordt gehost op een beveiligde server in Duitsland, volledig in overeenstemming met de GDPR-richtlijnen. Daarnaast worden inzendingen gecontroleerd op persoonlijke informatie, zoals e-mailadressen, die vervolgens automatisch uit de surveys worden verwijderd.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(2)">
+                    <p class="font-bold">Wat zijn de prijzen van Omoik?</p>
+                    <div class="faq-answer">Momenteel bieden wij een proefperiode van 3 maanden voor €25 per domein per maand. Daarna gelden onze reguliere tarieven, die binnenkort bekend worden gemaakt.</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pop-up voor gratis bonus -->
+    <div id="bonusModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Sluit de pop-up">&times;</button>
+            <h3 id="modalTitle" class="text-xl font-bold">Download je gratis PDF</h3>
+            <p id="modalDesc" class="mt-2">Laat je e-mail achter en ontvang direct onze exclusieve lijst met de beste vragen voor je websitebezoekers.</p>
+            
+            <label for="name">Naam</label>
+            <input id="name" type="text" placeholder="Naam" class="mt-1">
+            
+            <label for="email">Jouw e-mailadres</label>
+            <input id="email" type="email" placeholder="Jouw e-mailadres" class="mt-1">
+            
+            <div class="modal-checkbox">
+                <input id="subscribe" type="checkbox">
+                <label for="subscribe" class="text-sm">Ik wil mij inschrijven voor de nieuwsbrief</label>
+            </div>
+            
+            <button class="cta-button text-white px-6 py-3 rounded-full font-bold mt-4 w-full">Ontvang de PDF</button>
+            
+            <p class="text-xs mt-6 text-gray-600">*We zullen je gegevens nooit verkopen of misbruiken.</p>
+        </div>
     </div>
 
     <script>
@@ -130,6 +214,11 @@
         }
         function closeModal() {
             document.getElementById("bonusModal").style.display = "none";
+        }
+
+        function toggleFaq(index) {
+            const answers = document.querySelectorAll(".faq-answer");
+            answers[index].style.display = answers[index].style.display === "block" ? "none" : "block";
         }
     </script>
 
