@@ -30,6 +30,15 @@
         .faq-item { cursor: pointer; padding: 10px; margin-bottom: 5px; border-radius: 5px; }
         .faq-answer { display: none; padding: 10px; margin-top: 5px; border-radius: 5px; }
         .trusted-logos img { max-height: 70px; max-width: 170px; object-fit: contain; margin: 0 10px; }
+        .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+        }
     </style>
     
 </head>
@@ -82,7 +91,7 @@
 
         <!-- Wat krijg je met Omoik? -->
         <section class="mt-16 text-center p-5">
-            <h2 class="text-4xl font-bold">Wat krijg je met Omoik?</h2>
+            <h2 class="text-4xl font-bold mb-6">Wat krijg je met Omoik?</h2>
             <p>Wil je de slide-in survey gebruiken? Dan is het goed om het volgende te weten:</p>
             <div class="mt-6 max-w-xl mx-auto text-lg">
                 <ul class="list-disc text-left mx-auto inline-block ml-8">
@@ -101,6 +110,18 @@
             <h2 class="text-3xl font-bold">Gratis Bonus: De beste vragen voor je websitebezoekers</h2>
             <p class="mt-4 max-w-3xl mx-auto">Download onze gratis PDF met een overzicht van de meest effectieve vragen die je kunt stellen aan je websitebezoekers om direct waardevolle inzichten te verzamelen.</p>
             <button onclick="openModal()" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Download gratis PDF</button>
+        </section>
+
+         <!-- Product screenshots sectie -->
+        <section class="mt-20 px-5 max-w-2xl mx-auto text-center" aria-labelledby="screenshots-heading">
+            <h2 id="screenshots-heading" class="text-4xl font-bold mb-6">Zo ziet Omoik on-site eruit</h2>
+            <p class="mb-10 max-w-2xl mx-auto">
+            Een snelle blik op onze intuïtieve slide-in. Geen ruis, geen afleiding.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <img src="images/lp/lassie-hp.png" alt="Voorbeeld van slide-in op website" class="rounded-lg shadow-lg w-full h-auto fade-in" loading="lazy" />
+            <img src="images/lp/lassie-pd.png" alt="Voorbeeld van slide-in op website 2e versie" class="rounded-lg shadow-lg w-full h-auto fade-in" loading="lazy" />
+            </div>
         </section>
 
         <!-- Sociale Bewijskracht & Commitment -->
@@ -159,7 +180,7 @@
 
         <section class="mt-20 mb-20 px-5 max-w-5xl mx-auto text-center" aria-labelledby="roadmap-title">
             <h2 id="roadmap-title" class="text-4xl font-bold mb-6">Wat je nog van ons kunt verwachten</h2>
-            <p class="text-gray-300 mb-10 max-w-2xl mx-auto">
+            <p class="mb-10 max-w-2xl mx-auto">
               Wij bouwen actief aan nieuwe functies om het verzamelen van gebruikersfeedback nóg slimmer en gebruiksvriendelijker te maken.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -298,6 +319,21 @@
             }
         }
     }
+
+     // Animate images on scroll
+     const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    document.querySelectorAll('.fade-in').forEach(img => {
+      observer.observe(img);
+    });
     </script>
 
     <footer class="mt-16 text-center text-gray-400 p-6 bg-gray-800">
