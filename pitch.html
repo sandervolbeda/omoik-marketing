@@ -27,8 +27,8 @@
         .modal-checkbox input { width: auto; margin-right: 10px; }
         .banner { background: #8a2be2; color: white; text-align: center; padding: 10px; font-weight: bold; }
         .banner a { text-decoration: underline; cursor: pointer; }
-        .faq-item { cursor: pointer; background: #222; padding: 10px; margin-bottom: 5px; border-radius: 5px; }
-        .faq-answer { display: none; padding: 10px; background: #333; margin-top: 5px; border-radius: 5px; }
+        .faq-item { cursor: pointer; padding: 10px; margin-bottom: 5px; border-radius: 5px; }
+        .faq-answer { display: none; padding: 10px; margin-top: 5px; border-radius: 5px; }
         .trusted-logos img { max-height: 70px; max-width: 170px; object-fit: contain; margin: 0 10px; }
     </style>
     
@@ -50,8 +50,8 @@
     </nav>
 
     <header class="text-center mt-10 p-5 w-full max-w-7xl mx-auto">
-        <h1 class="text-2xl font-bold">Verzamel gebruikersfeedback voor waardevolle inzichten</h1>
-        <p class="text-lg mt-4 max-w-xl mx-auto">Ontdek nieuwe <b>optimalisatiepunten</b> en <b>testideeën voor CRO</b>, terwijl privacy, toegankelijkheid en snelheid voorop staan.</p>
+        <h1 class="text-3xl font-bold max-w-2xl mx-auto mb-6">Verzamel gebruikersfeedback middels slide-in surveys voor waardevolle inzichten</h1>
+        <p class="text-lg mb-6 max-w-xl mx-auto">Ontdek nieuwe <b>optimalisatiepunten</b> en <b>testideeën voor CRO</b>, terwijl privacy, toegankelijkheid en snelheid voorop staan.</p>
         
         <!-- Video Pitch -->
         <div class="mt-6 max-w-xl mx-auto">
@@ -83,6 +83,7 @@
         <!-- Wat krijg je met Omoik? -->
         <section class="mt-16 text-center p-5">
             <h2 class="text-4xl font-bold">Wat krijg je met Omoik?</h2>
+            <p>Wil je de slide-in survey gebruiken? Dan is het goed om het volgende te weten:</p>
             <div class="mt-6 max-w-xl mx-auto text-lg">
                 <ul class="list-disc text-left mx-auto inline-block ml-8">
                     <li class="mb-4"><b>Direct inzicht</b> in waarom <b>bezoekers afhaken</b> op je website</li>
@@ -156,22 +157,57 @@
             <p class="mt-6 mb-12 text-xs italic">Het is momenteel alleen mogelijk om via contact met Sander toegang te krijgen tot het systeem.</p>
         </section>
 
+        <section class="mt-20 mb-20 px-5 max-w-5xl mx-auto text-center" aria-labelledby="roadmap-title">
+            <h2 id="roadmap-title" class="text-4xl font-bold mb-6">Wat je nog van ons kunt verwachten</h2>
+            <p class="text-gray-300 mb-10 max-w-2xl mx-auto">
+              Wij bouwen actief aan nieuwe functies om het verzamelen van gebruikersfeedback nóg slimmer en gebruiksvriendelijker te maken.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+              <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">📈 On-page embeds</h3>
+                <p>Verzamel feedback direct in blogartikelen of contentpagina’s met inline componenten.</p>
+              </div>
+              <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">🧠 Slimme AI-analyses</h3>
+                <p>Laat ons systeem automatisch verbanden en inzichten vinden in je gebruikersfeedback.</p>
+              </div>
+              <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">💬 Exit-intent pop-ups</h3>
+                <p>Geef desktopgebruikers een laatste kans om hun mening te geven voordat ze je site verlaten.</p>
+              </div>
+              <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">⭐️ NPS, CSAT, etc.</h3>
+                <p>Er worden meer vormen van feedback verzamelen toegevoegd. Dit gaat verder dan alleen de slide-in survey.</p>
+              </div>
+              <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-2">🔐 Toegankelijkheid verbeteren</h3>
+                <p>We blijven investeren in een betere ervaring voor alle gebruikers.</p>
+              </div>
+            </div>
+          </section>
+
+
+
         <!-- FAQ Sectie -->
         <section class="mt-16 text-center p-5">
             <h2 class="text-4xl font-bold">Veelgestelde vragen</h2>
             <p class="mt-6">Hieronder staan een aantal vragen waarvan wij denken dat het handig is om vooraf al te weten.</p>
             <div class="mt-6 max-w-4xl mx-auto text-left">
-                <div class="faq-item" onclick="toggleFaq(0)">
+                <div class="faq-item bg-gray-800" onclick="toggleFaq(0)">
                     <p class="font-bold">Hoe moeilijk is het om Omoik te installeren?</p>
                     <div class="faq-answer">Omoik is eenvoudig te implementeren. Je kunt het script toevoegen via Google Tag Manager of direct in de footer van je website. Dit duurt slechts een paar minuten.</div>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(1)">
+                <div class="faq-item bg-gray-800" onclick="toggleFaq(1)">
                     <p class="font-bold">Hoe waarborgt Omoik privacy?</p>
                     <div class="faq-answer">Wij gebruiken geen cookies. Alle gegevens worden lokaal opgeslagen op het apparaat van de bezoeker. Data wordt gehost op een beveiligde server in Duitsland, volledig in overeenstemming met de GDPR-richtlijnen. Daarnaast worden inzendingen gecontroleerd op persoonlijke informatie, zoals e-mailadressen, die vervolgens automatisch uit de surveys worden verwijderd.</div>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(2)">
+                <div class="faq-item bg-gray-800" onclick="toggleFaq(2)">
                     <p class="font-bold">Wat zijn de prijzen van Omoik?</p>
                     <div class="faq-answer">Momenteel bieden wij een proefperiode van 3 maanden voor €25 per domein per maand. Daarna gelden onze reguliere tarieven, die binnenkort bekend worden gemaakt.</div>
+                </div>
+                <div class="faq-item bg-gray-800" onclick="toggleFaq(3)">
+                    <p class="font-bold">Welke techniek zit er achter Omoik?</p>
+                    <div class="faq-answer">Wij maken gebruik van de populaire en nieuwste frameworks van dit moment. Technische details worden later gedeeld.</div>
                 </div>
             </div>
         </section>
