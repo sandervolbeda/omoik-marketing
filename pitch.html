@@ -16,7 +16,7 @@
         header { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
         .cta-button { background: linear-gradient(90deg, #8a2be2, #00bfff); transition: background 0.4s ease-in-out; }
         .cta-button:hover { background: linear-gradient(90deg, #00bfff, #8a2be2); }
-        .countdown { font-size: 1.5rem; font-weight: bold; color: #ffcc00; }
+        .countdown { font-size: 1.25rem; font-weight: bold; color: #ffcc00; }
         .trusted-logos img { max-height: 50px; margin: 0 10px; }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; }
         .modal-content { background: #fff; padding: 20px; border-radius: 10px; text-align: left; color: #000; max-width: 400px; position: relative; }
@@ -29,6 +29,7 @@
         .banner a { text-decoration: underline; cursor: pointer; }
         .faq-item { cursor: pointer; background: #222; padding: 10px; margin-bottom: 5px; border-radius: 5px; }
         .faq-answer { display: none; padding: 10px; background: #333; margin-top: 5px; border-radius: 5px; }
+        .trusted-logos img { max-height: 70px; max-width: 170px; object-fit: contain; margin: 0 10px; }
     </style>
     
 </head>
@@ -49,8 +50,8 @@
     </nav>
 
     <header class="text-center mt-10 p-5 w-full max-w-7xl mx-auto">
-        <h1 class="text-2xl font-bold">Verzamel gebruikersfeedback zonder cookies</h1>
-        <p class="text-lg mt-4 max-w-xl mx-auto">Privacyvriendelijk, toegankelijk en razendsnel. Verzamel feedback zonder je website te vertragen.</p>
+        <h1 class="text-2xl font-bold">Verzamel gebruikersfeedback voor waardevolle inzichten</h1>
+        <p class="text-lg mt-4 max-w-xl mx-auto">Ontdek nieuwe <b>optimalisatiepunten</b> en <b>testideeën voor CRO</b>, terwijl privacy, toegankelijkheid en snelheid voorop staan.</p>
         
         <!-- Video Pitch -->
         <div class="mt-6 max-w-xl mx-auto">
@@ -60,40 +61,42 @@
             </video>
         </div>
         
-        <a href="#pricing" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Start voor €25</a>
+        <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Toegang tot Omoik vragen</a> 
+        <p class="mt-6 mb-12 text-xs italic">Het is momenteel alleen mogelijk om via contact met Sander toegang te krijgen tot het systeem.</p>
         
         <!-- Countdown Timer -->
-        <p class="mt-4 countdown" id="countdown">Aanbieding verloopt over: -- dagen -- uur -- min -- sec</p>
+        <p class="mt-4 countdown" id="countdown-label">Kennismakingsactie verloopt over:</p>
+        <p class="mt-2 countdown text-xl" id="countdown-timer">-- dagen -- uur -- min -- sec</p>
     </header>
 
     <div class="container max-w-7xl mx-auto">
         <!-- Autoriteit & Social Proof -->
         <section class="mt-16 text-center p-5">
             <h2 class="text-3xl font-bold">Vertrouwd door professionals</h2>
-            <div class="trusted-logos flex justify-center items-center mt-6">
-                <img src="images/logos/logo-oma.png" alt="OMA logo">
-                <img src="images/logos/logo-marketing.png" alt="Marketing agency logo">
-                <img src="images/logos/logo-uxdesign.png" alt="UX Design bedrijf logo">
+            <div class="trusted-logos flex flex-wrap justify-center items-center mt-6 gap-4">
+                <img src="images/clients/lassie-logo.png" alt="Lassie logo">
+                <img src="images/clients/cro-tool-logo.png" alt="CRO tool logo">
+                <img src="images/clients/boodschappen-logo.png" alt="Boodschappen logo">
             </div>
         </section>
 
         <!-- Wat krijg je met Omoik? -->
         <section class="mt-16 text-center p-5">
             <h2 class="text-4xl font-bold">Wat krijg je met Omoik?</h2>
-            <div class="mt-6 max-w-4xl mx-auto text-lg">
-                <ul class="list-disc text-left mx-auto inline-block">
-                    <li>Direct inzicht in waarom bezoekers afhaken op je website</li>
-                    <li>Feedback van echte gebruikers zonder dat je hen stoort</li>
-                    <li>Nauwelijks impact op je websitesnelheid</li>
-                    <li>Privacy garantie van gebruikers</li>
-                    <li>Eenvoudige implementatie via GTM of direct in de footer</li>
-                    <li>Toegang tot automatische inzichten middels machine learning (binnenkort beschikbaar)</li>
+            <div class="mt-6 max-w-xl mx-auto text-lg">
+                <ul class="list-disc text-left mx-auto inline-block ml-8">
+                    <li class="mb-4"><b>Direct inzicht</b> in waarom <b>bezoekers afhaken</b> op je website</li>
+                    <li class="mb-4"><b>Feedback</b> van <b>echte gebruikers</b> zonder dat je hen stoort</li>
+                    <li class="mb-4"><b>Geen impact</b> op je <b>websitesnelheid</b></li>
+                    <li class="mb-4"><b>Privacy garantie</b> van gebruikers</li>
+                    <li class="mb-4">Eenvoudige <b>implementatie</b> via <b>GTM of on-site</b> met een script</li>
+                    <li>Toegang tot <b>automatische inzichten</b> middels machine learning (binnenkort beschikbaar)</li>
                 </ul>
             </div>
         </section>
 
         <!-- Gratis bonus pop-up -->
-        <section class="mt-16 text-center p-5">
+        <section class="mt-16 text-center p-5" style="display: none;">
             <h2 class="text-3xl font-bold">Gratis Bonus: De beste vragen voor je websitebezoekers</h2>
             <p class="mt-4 max-w-3xl mx-auto">Download onze gratis PDF met een overzicht van de meest effectieve vragen die je kunt stellen aan je websitebezoekers om direct waardevolle inzichten te verzamelen.</p>
             <button onclick="openModal()" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Download gratis PDF</button>
@@ -104,9 +107,9 @@
             <h2 class="text-4xl font-bold">Wat zeggen onze klanten?</h2>
             <div class="mt-6 max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
                 <p class="italic text-lg">"Omoik helpt ons snel waardevolle inzichten te verzamelen zonder onze website te vertragen."</p>
-                <cite class="block mt-4 font-bold">- OMA (Online Marketing Agency)</cite>
+                <cite class="block mt-4 font-bold">- Nicole, head of CRO bij OMA (Online Marketing Agency)</cite>
             </div>
-            <div class="mt-6 max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="mt-6 max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg" style="display: none">
                 <p class="italic text-lg">"Binnen een week zagen we al verbeteringen op onze website door de inzichten die we met Omoik kregen!"</p>
                 <cite class="block mt-4 font-bold">- UX Specialist, Digital Agency</cite>
             </div>
@@ -121,12 +124,12 @@
                         <tr class="bg-gray-800">
                             <th class="p-3">Functie</th>
                             <th class="p-3">Omoik</th>
-                            <th class="p-3">Andere tools</th>
+                            <th class="p-3">Anderen</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border border-gray-700">
-                            <td class="p-3">Privacy-vriendelijk (geen cookies)</td>
+                            <td class="p-3">Privacy-vriendelijk</td>
                             <td class="p-3 text-green-400">✅ Ja</td>
                             <td class="p-3 text-red-400">❌ Nee</td>
                         </tr>
@@ -136,18 +139,21 @@
                             <td class="p-3 text-red-400">❌ Nee</td>
                         </tr>
                         <tr class="border border-gray-700">
-                            <td class="p-3">Minimale impact op laadsnelheid</td>
+                            <td class="p-3">Laadsnelheid optimalisatie</td>
                             <td class="p-3 text-green-400">✅ Ja</td>
-                            <td class="p-3 text-red-400">❌ Vaak traag</td>
+                            <td class="p-3 text-red-400">❌ Nee</td>
                         </tr>
                         <tr class="border border-gray-700">
                             <td class="p-3">Persoonlijke ondersteuning</td>
                             <td class="p-3 text-green-400">✅ Ja</td>
-                            <td class="p-3 text-red-400">❌ Geen directe support</td>
+                            <td class="p-3 text-red-400">❌ Soms</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="cta-button text-white px-6 py-3 rounded-full font-bold mt-6 inline-block">Toegang tot Omoik vragen</a> 
+            <p class="mt-6 mb-12 text-xs italic">Het is momenteel alleen mogelijk om via contact met Sander toegang te krijgen tot het systeem.</p>
         </section>
 
         <!-- FAQ Sectie -->
@@ -207,7 +213,7 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = `Aanbieding verloopt over: ${days} dagen ${hours} uur ${minutes} min ${seconds} sec`;
+            document.getElementById("countdown-timer").innerHTML = `${days} dagen ${hours} uur ${minutes} min ${seconds} sec`;
         }
 
         setInterval(updateCountdown, 1000);
@@ -258,8 +264,9 @@
     }
     </script>
 
-    <footer class="mt-16 text-center text-gray-400 py-6 bg-gray-800">
-        <p>&copy; 2025 Omoik. Alle rechten voorbehouden.</p>
+    <footer class="mt-16 text-center text-gray-400 p-6 bg-gray-800">
+        <p class="mb-3">&copy; 2025 Omoik. Alle rechten voorbehouden.</p> 
+        <p>Een product door <a href="https://roelofjanelsinga.com/" target="_blank" class="underline">Roelof Jan Elsinga</a> en <a href="https://sandervolbeda.com/" target="_blank" class="underline">Sander Volbeda</a>.</p>
     </footer>
 </body>
 </html>
