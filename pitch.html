@@ -39,12 +39,21 @@
         opacity: 1;
         transform: translateY(0);
         }
+        .faq-highlighted {
+            border: 3px solid #8a2be2;
+            box-shadow: 0 0 10px #8a2be2;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
     </style>
     
 </head>
 <body class="bg-gray-900 text-white flex flex-col justify-center">
     <div class="banner" style="display: none;">
         🎁 <a onclick="loadMailchimpPopup();" id="open-popup">Ontvang gratis: De beste vragen om aan je websitebezoekers te stellen!</a> 
+    </div>
+    <!-- Kennismakingsactie Banner -->
+    <div class="intro-offer-banner bg-yellow-400 text-gray-900 text-center py-3 text-sm">
+        🎉 <b>Kennismakingsactie:</b> Probeer Omoik nu 3 maanden voor €25 p/m per domein. <a href="#pricing-faq" class="underline font-bold" onclick="highlightAndOpenFaq(event, 0)">Meer informatie</a>
     </div>
 
     <nav class="w-full max-w-7xl mx-auto py-4 px-4 z-50 h-20 flex items-center justify-between">
@@ -215,17 +224,17 @@
             <h2 class="text-4xl font-bold">Veelgestelde vragen</h2>
             <p class="mt-6">Hieronder staan een aantal vragen waarvan wij denken dat het handig is om vooraf al te weten.</p>
             <div class="mt-6 max-w-4xl mx-auto text-left">
-                <div class="faq-item bg-gray-800" onclick="toggleFaq(0)">
-                    <p class="font-bold">Hoe moeilijk is het om Omoik te installeren?</p>
-                    <div class="faq-answer">Omoik is eenvoudig te implementeren. Je kunt het script toevoegen via Google Tag Manager of direct in de footer van je website. Dit duurt slechts een paar minuten.</div>
+                <div id="pricing-faq" class="faq-item bg-gray-800" onclick="toggleFaq(0)">
+                    <p class="font-bold">Wat zijn de prijzen van Omoik?</p>
+                    <div class="faq-answer">Momenteel bieden wij een proefperiode van 3 maanden voor €25 per domein p/m excl. btw. Daarna gelden onze reguliere tarieven, die binnenkort bekend worden gemaakt.</div>
                 </div>
                 <div class="faq-item bg-gray-800" onclick="toggleFaq(1)">
-                    <p class="font-bold">Hoe waarborgt Omoik privacy?</p>
-                    <div class="faq-answer">Wij gebruiken geen cookies. Alle gegevens worden lokaal opgeslagen op het apparaat van de bezoeker. Data wordt gehost op een beveiligde server in Duitsland, volledig in overeenstemming met de GDPR-richtlijnen. Daarnaast worden inzendingen gecontroleerd op persoonlijke informatie, zoals e-mailadressen, die vervolgens automatisch uit de surveys worden verwijderd.</div>
+                    <p class="font-bold">Hoe kun je Omoik installeren?</p>
+                    <div class="faq-answer">Omoik is eenvoudig te implementeren. Je kunt het script toevoegen via Google Tag Manager of direct in de footer van je website. Dit duurt slechts een paar minuten.</div>
                 </div>
                 <div class="faq-item bg-gray-800" onclick="toggleFaq(2)">
-                    <p class="font-bold">Wat zijn de prijzen van Omoik?</p>
-                    <div class="faq-answer">Momenteel bieden wij een proefperiode van 3 maanden voor €25 per domein per maand. Daarna gelden onze reguliere tarieven, die binnenkort bekend worden gemaakt.</div>
+                    <p class="font-bold">Hoe waarborgt Omoik privacy?</p>
+                    <div class="faq-answer">Wij gebruiken geen cookies. Alle gegevens worden lokaal opgeslagen op het apparaat van de bezoeker. Data wordt gehost op een beveiligde server in Duitsland, volledig in overeenstemming met de GDPR-richtlijnen. Daarnaast worden inzendingen gecontroleerd op persoonlijke informatie, zoals e-mailadressen, die vervolgens automatisch uit de surveys worden verwijderd.</div>
                 </div>
                 <div class="faq-item bg-gray-800" onclick="toggleFaq(3)">
                     <p class="font-bold">Welke techniek zit er achter Omoik?</p>
@@ -285,7 +294,27 @@
 
         function toggleFaq(index) {
             const answers = document.querySelectorAll(".faq-answer");
+            const faqItems = document.querySelectorAll(".faq-item");
+
             answers[index].style.display = answers[index].style.display === "block" ? "none" : "block";
+            
+            // Haal de highlight weg wanneer de gebruiker opnieuw klikt
+            faqItems[index].classList.remove("faq-highlighted");
+        }
+
+        function highlightAndOpenFaq(event, faqIndex) {
+            event.preventDefault(); // voorkomt standaard scrollgedrag
+            
+            // Open FAQ antwoord
+            const answers = document.querySelectorAll(".faq-answer");
+            answers[faqIndex].style.display = "block";
+
+            // Highlight FAQ vraag
+            const faqItems = document.querySelectorAll(".faq-item");
+            faqItems[faqIndex].classList.add("faq-highlighted");
+            
+            // Scroll soepel naar de FAQ vraag
+            faqItems[faqIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         // function showMailingPopUp() {
@@ -301,25 +330,25 @@
         //     document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
         // }
         
-        function loadMailchimpPopup() {
-        if (!document.getElementById("mcjs")) {
-            var script = document.createElement("script");
-            script.id = "mcjs";
-            script.src = "https://chimpstatic.com/mcjs-connected/js/users/8c776e87580fc582336b41b37/76754d444e0d51305cd7e90a9.js";
-            script.onload = function() {
-                setTimeout(function() {
-                    if (window.MC && window.MC.modal) {
-                        window.MC.modal.show();
-                    }
-                }, 500); // Geef Mailchimp even tijd om te laden
-            };
-            document.body.appendChild(script);
-        } else {
-            if (window.MC && window.MC.modal) {
-                window.MC.modal.show();
-            }
-        }
-    }
+        // function loadMailchimpPopup() {
+        //     if (!document.getElementById("mcjs")) {
+        //         var script = document.createElement("script");
+        //         script.id = "mcjs";
+        //         script.src = "https://chimpstatic.com/mcjs-connected/js/users/8c776e87580fc582336b41b37/76754d444e0d51305cd7e90a9.js";
+        //         script.onload = function() {
+        //             setTimeout(function() {
+        //                 if (window.MC && window.MC.modal) {
+        //                     window.MC.modal.show();
+        //                 }
+        //             }, 500); // Geef Mailchimp even tijd om te laden
+        //         };
+        //         document.body.appendChild(script);
+        //     } else {
+        //         if (window.MC && window.MC.modal) {
+        //             window.MC.modal.show();
+        //         }
+        //     }
+        // }
 
      // Animate images on scroll
      const observer = new IntersectionObserver((entries) => {
