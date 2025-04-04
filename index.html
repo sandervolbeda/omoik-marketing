@@ -1,237 +1,1179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Omoik helps you collect valuable user feedback. It’s smart, non-intrusive, and designed for marketers and UX experts to turn insights into action.">
-    <meta name="keywords" content="user feedback, CRO, UX, surveys, marketing insights">
+    <title>Omoik | Real-Time User Insights & Feedback Platform</title>
+    <meta name="description" content="Omoik helps you understand what users think as they browse your website. Collect real-time insights with non-intrusive slide-in feedback widgets and make data-driven decisions.">
+    <meta name="keywords" content="user feedback, user insights, user experience, UX research, customer feedback, website analytics">
     <meta name="author" content="Omoik">
-    <title>Omoik - Early Access</title>
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Cookies -->
+    <script>
+            if (window.location.hostname === 'www.omoik.com') {
+                var script = document.createElement('script');
+                script.src = "https://web.cmp.usercentrics.eu/ui/loader.js";
+    script.id = "usercentrics-cmp";
+                script.setAttribute("data-settings-id", "8Fwxz3ehxiopwx");
+                script.async = true;
+                document.head.appendChild(script);
+            }
+    </script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.omoik.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.omoik.com">
+    <meta property="og:title" content="Omoik | Real-Time User Insights & Feedback Platform">
+    <meta property="og:description" content="Understand what users think as they browse your website. Collect real-time insights with non-intrusive feedback widgets.">
+    <meta property="og:image" content="https://www.omoik.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.omoik.com">
+    <meta property="twitter:title" content="Omoik | Real-Time User Insights & Feedback Platform">
+    <meta property="twitter:description" content="Understand what users think as they browse your website. Collect real-time insights with non-intrusive feedback widgets.">
+    <meta property="twitter:image" content="https://www.omoik.com/twitter-image.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
-    <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="8Fwxz3ehxiopwx" async></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f0ff',
+                            100: '#ede0ff',
+                            200: '#dec5ff',
+                            300: '#c89aff',
+                            400: '#b06aff',
+                            500: '#9a3aff',
+                            600: '#8a2be2', // Main primary color
+                            700: '#7722c9',
+                            800: '#621da3',
+                            900: '#521b85',
+                            950: '#35105a',
+                        },
+                        secondary: {
+                            50: '#e0f7ff',
+                            100: '#b8edff',
+                            200: '#83e1ff',
+                            300: '#3dd5ff',
+                            400: '#00c7ff',
+                            500: '#00bfff', // Main secondary color
+                            600: '#0099cc',
+                            700: '#0077a3',
+                            800: '#005c80',
+                            900: '#004d6b',
+                            950: '#003347',
+                        },
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+                        'feature': '0 50px 100px -20px rgba(0, 0, 0, 0.1), 0 30px 60px -30px rgba(0, 0, 0, 0.1)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .bg-gradient-mesh {
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(138, 43, 226, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(0, 191, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(138, 43, 226, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(0, 191, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(138, 43, 226, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(0, 191, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, rgba(138, 43, 226, 0.1) 0px, transparent 50%);
+        }
+        
+        .dark .bg-gradient-mesh {
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(138, 43, 226, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(0, 191, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(138, 43, 226, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(0, 191, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(138, 43, 226, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(0, 191, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, rgba(138, 43, 226, 0.2) 0px, transparent 50%);
+        }
+        
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #8a2be2, #00bfff);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
+            background-size: 200px;
+            opacity: 0.05;
+        }
+        
+        /* Slide-in feedback widget animation */
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        .slide-in-widget {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid #8a2be2;
+            outline-offset: 2px;
+        }
+        
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8a2be2;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Client logos */
+        .invert-on-light {
+            filter: invert(1);
+        }
+
+        .dark .invert-on-light {
+            filter: none;
+        }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Omoik",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "49.00",
+        "priceCurrency": "USD"
+      },
+      "description": "Omoik helps you understand what users think as they browse your website. Collect real-time insights with non-intrusive slide-in feedback widgets and make data-driven decisions."
+    }
+    </script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NXXD6P4R');</script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: radial-gradient(circle at 30% 30%, rgba(138, 43, 226, 0.2), transparent),
-                        radial-gradient(circle at 70% 70%, rgba(0, 191, 255, 0.2), transparent);
-            /* animation: moveBackground 10s infinite alternate ease-in-out; */
-        }
-        @keyframes moveBackground {
-            0% {
-                transform: translateX(-10px) translateY(-10px);
-            }
-            100% {
-                transform: translateX(10px) translateY(10px);
-            }
-        }
-        .cta-button {
-            background: linear-gradient(90deg, #8a2be2, #00bfff);
-            transition: background 0.4s ease-in-out;
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(90deg, #00bfff, #8a2be2);
-        }
-    </style>
-    <!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8c776e87580fc582336b41b37/76754d444e0d51305cd7e90a9.js");</script> -->
 </head>
-<body class="bg-gray-900 text-white flex flex-col items-center justify-center relative p-5">
+<body class="font-sans text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-gray-900 transition-colors duration-200">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXXD6P4R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="background"></div>
+
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <nav class="fixed top-0 w-full bg-[#201C3E]/80 backdrop-blur-lg py-4 px-4 z-50 h-16 flex items-center justify-between shadow-lg max-w-7xl mx-auto mt-2 rounded-md">
-        <a href="index.html" aria-label="Go to homepage" class="text-white font-extrabold text-lg focus-visible:ring-2 focus-visible:ring-white px-2 flex flex-row items-center">
-            <img src="images/omoik-logo-small.png" alt="Omoik logo looking like a owl" class="mr-2" style="max-height:50px;">
-            Omoik
-        </a>
-    
-        <div class="flex items-center space-x-4">
-            <a href="https://forms.gle/49sgW6nXU26wuBe79" target="_blank" aria-label="Join Early Access"
-                class="cta-button text-white px-6 py-2 rounded-full font-bold shadow-lg bg-purple-700 hover:bg-purple-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition">
-                Early Access
-            </a>
-    
-            <a href="https://app.omoik.com/login" target="_blank" aria-label="Go to Omoik login page"
-                class="text-white text-sm font-medium hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white transition">
-                Login
-            </a>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="https://omoik.com/images/omoik-logo-small.png" alt="Omoik Logo" class="h-8 w-auto mr-3">
+                        <span class="text-2xl font-display font-bold text-primary-600 dark:text-primary-400">Omoik</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">Testimonials</a>
+                    <a href="#roadmap" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">Roadmap</a>
+                    <a href="#pricing" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">Pricing</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">About</a>
+                    <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="bg-primary-600 dark:bg-primary-700 text-white px-5 py-2.5 rounded-full font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors shadow-sm hover:shadow">Request Early Access</a>
+                    <a href="https://app.omoik.com/login" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">Login</a>
+                    <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400">
+                        <!-- Sun icon for dark mode -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon icon for light mode -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="mobile-theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400">
+                        <!-- Sun icon for dark mode -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon icon for light mode -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-button" aria-label="Open menu" class="text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 rounded">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 mobile-menu hidden md:hidden">
+            <div class="p-4 flex justify-end">
+                <button id="close-mobile-menu" aria-label="Close menu" class="text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 rounded">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="px-4 py-6 space-y-6">
+                <a href="#features" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Features</a>
+                <a href="#testimonials" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Testimonials</a>
+                <a href="#roadmap" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Roadmap</a>
+                <a href="#pricing" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Pricing</a>
+                <a href="#about" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">About</a>
+                <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="block w-full bg-primary-600 dark:bg-primary-700 text-white text-center px-5 py-3 rounded-full font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors shadow-sm hover:shadow">Request Early Access</a>
+                <a href="https://app.omoik.com/login" target="_blank" class="block text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Login</a> 
+            </div>
         </div>
     </nav>
-        
-    <section class="text-center z-10 mt-20 h-[70vh] flex flex-col justify-center" aria-labelledby="hero-title">
-        <h1 id="hero-title" class="text-6xl font-bold mb-6">Omoik</h1>
-        <p class="text-lg max-w-lg mx-auto mb-6">
-            Omoik helps you collect valuable user feedback. It’s smart. It’s non-intrusive. Designed for marketers and UX experts. Turn insights into action.
-        </p>
-        <a href="https://forms.gle/49sgW6nXU26wuBe79" class="cta-button text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition">
-            Request Early Access
-        </a>
-    </section>
 
-    <section class="mt-20 mb-20 px-5 max-w-5xl text-center" aria-labelledby="roadmap-heading">
-        <h2 id="roadmap-heading" class="text-4xl font-bold mb-6">Our Roadmap</h2>
-    <p class="text-gray-300 mb-6">Here’s what’s coming next for Omoik.</p>
-    
-    <!-- First row of roadmap items -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
-        <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 1 - Alpha Testing</h3>
-            <p class="text-gray-300 mb-2">
-                Launch early access to selected users. Gather feedback and refine features on-site slide-in.
-            </p>
-            <!-- Removed commented-out code -->
-            <span class="text-blue-400 font-bold mt-auto" role="img" aria-label="In Progress">
-                🚀 In Progress
-            </span>
-            </div>
-            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 2 - Public Launch</h3>
-            <p class="text-gray-300 mb-2">
-                Release Omoik to a wider audience with core features and analytics.
-            </p>
-            <span class="text-yellow-400 font-bold mt-auto" role="img" aria-label="Coming Soon">
-                ⏳ Coming Soon
-            </span>
-            </div>
-            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 3 - Additional Survey Types</h3>
-            <p class="text-gray-300 mb-2">
-                More on-page survey types will be available.
-            </p>
-            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
-                🔜 Planned
-            </span>
-            </div>
-        </div>
-        
-        <!-- Second row of roadmap items -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6" role="list">
-            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 4 - Privacy & Accessibility</h3>
-            <p class="text-gray-300 mb-2">
-                Additional focus on privacy and accessibility for all users.
-            </p>
-            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
-                🔜 Planned
-            </span>
-            </div>
-            <!-- Commented-out roadmap item removed for clarity -->
-            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 5 - Advanced Features</h3>
-            <p class="text-gray-300 mb-2">
-                Enhancing AI-powered insights, integrations, and customization options.
-            </p>
-            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Planned">
-                🔜 Planned
-            </span>
-            </div>
-            <div role="listitem" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-            <h3 class="text-2xl font-bold mb-2">Phase 6 - AI Recommendations</h3>
-            <p class="text-gray-300 mb-2">
-                Leverage machine learning for smart recommendations and auto-generated insights.
-            </p>
-            <span class="text-gray-400 font-bold mt-auto" role="img" aria-label="Future">
-                🔜 Future
-            </span>
-            </div>
-        </div>
-    </section>
-
-    <section class="mt-20 mb-20 px-5 max-w-5xl text-center" aria-labelledby="insights-heading">
-        <h2 id="insights-heading" class="text-4xl font-bold mb-6">Our Latest Insights</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
-            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
-                <img src="images/blogs/psychology-behind-effect-survey-questions.webp" alt="Image for Understanding User Behavior" class="w-full h-40 object-cover rounded-lg">
-                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">The Psychology Behind Effective Survey Questions</h3>
-                <p class="text-gray-300 px-6 flex-grow">
-                    Surveys are a great way to gather insights from your audience. The way you ask questions affects the answers you get.
-                </p>
-                <a href="articles/psychology-behind-survey-questions.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
-                    Read article ...
-                </a>
-                <div class="mt-4 px-6 pb-6 text-gray-400">
-                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
+    <!-- Hero Section -->
+    <section id="main-content" class="relative overflow-hidden pt-24 pb-32 bg-gradient-mesh dark:bg-gray-900">
+        <div class="absolute inset-0 noise-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-16 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white leading-tight mb-6">
+                        Know what your users <span class="text-gradient">think</span>, right when it matters
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
+                        Omoik reveals real user insights as they browse, helping you understand the why behind user behavior so you can optimize with confidence.
+                    </p>
+                    <div class="flex flex-col items-start space-y-4">
+                        <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="inline-block bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity shadow-md hover:shadow-lg">
+                            Request Early Access
+                        </a>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Get in touch with Sander via LinkedIn for access</p>
+                    </div>
                 </div>
-            </article>
-            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
-                <img src="images/blogs/common-mistakes-survey-ruin-data.png" alt="Image for The Power of Feedback" class="w-full h-40 object-cover rounded-lg">
-                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">Common Mistakes in Surveys That Ruin Your Data (And How to Fix Them)</h3>
-                <p class="text-gray-300 px-6 flex-grow">
-                    Poorly designed surveys can lead to unreliable data, misleading conclusions, and bad business decisions. 
-                </p>
-                <a href="articles/common-mistakes-in-surveys.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
-                    Read article ...
-                </a>
-                <div class="mt-4 px-6 pb-6 text-gray-400">
-                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
+                <div class="md:w-1/2 pl-0 md:pl-10 animate-float">
+                    <div class="relative">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-2xl blur opacity-30"></div>
+                        <img src="https://placehold.co/600x400/f8fafc/8a2be2?text=Omoik+Dashboard" alt="Omoik Dashboard" class="relative rounded-2xl shadow-feature">
+                    </div>
                 </div>
-            </article>
-            <article role="listitem" class="bg-gray-800 rounded-lg shadow-lg flex flex-col">
-                <img src="blog3.jpg" alt="Image for Boosting Conversions with CRO" class="w-full h-40 object-cover rounded-lg">
-                <h3 class="text-2xl px-6 pt-6 font-bold mb-3">Boosting Conversions with CRO</h3>
-                <p class="text-gray-300 px-6 flex-grow">
-                    See how conversion rate optimization can increase engagement and revenue.
-                </p>
-                <a href="articles/psychology-behind-survey-questions.html" class="text-gray-300 px-6 pt-4 flex-grow underline" aria-label="Read article: Understanding User Behavior">
-                    Read article ...
-                </a>
-                <div class="mt-4 px-6 pb-6 text-gray-400">
-                    By <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="underline" rel="noopener noreferrer">Sander Volbeda</a>, Experimentation Specialist
-                </div>
-            </article>
+            </div>
         </div>
     </section>
 
-    <section class="mt-20 mb-20 px-5 max-w-5xl text-center" aria-labelledby="about-omoik">
-        <h2 id="about-omoik" class="text-4xl font-bold mb-6">Turn Visitors into Customers with Smart Slide-In Surveys</h2>
-        <p class="text-lg max-w-lg mx-auto mb-6">Most surveys feel like roadblocks. They pop up, disrupt the experience, and push visitors away. That’s why marketing specialists choose Omoik’s slide-in survey software—a better way to collect feedback without annoying users.</p>
-        <p class="text-lg max-w-lg mx-auto mb-6">A slide-in survey appears naturally, at the right moment. No interruptions. No distractions. Just a simple, user-friendly feedback tool that helps you understand what visitors need. Whether you’re improving conversion rates, optimizing UX, or running customer research, Omoik delivers insights that drive real results.</p>
-        <p class="text-lg max-w-lg mx-auto mb-6">With Omoik, you can:</p>
-        <div class="flex justify-center">
-            <ul class="list-disc pl-6 text-left">
-                <li>Collect website feedback without hurting engagement</li>
-                <li>Understand why users drop off and improve their experience</li>
-                <li>Boost conversions by asking the right questions at the right time</li>
-                <li>Refine your marketing strategy based on real visitor data</li>
-            </ul>
+    <!-- Client Logos -->
+    <section class="py-16 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 dark:text-gray-400 mb-10 font-medium">Trusted by innovative companies</p>
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center opacity-70">
+                <img src="images/clients/lassie-logo.png" alt="Lassie Logo" class="h-8 mx-auto dark:brightness-200 invert-on-light">
+                <img src="images/clients/oma-logo-wit.png" alt="OMA Logo" class="h-8 mx-auto dark:brightness-200 invert-on-light">
+                <img src="images/clients/boodschappen-logo.png" alt="Boodschappen Logo" class="h-8 mx-auto dark:brightness-200 invert-on-light">
+                <img src="images/clients/cro-tool-logo.png" alt="Client Logo" class="h-8 mx-auto dark:brightness-200 invert-on-light">
+                <!-- <img src="https://placehold.co/160x80/ffffff/64748b?text=LOGO" alt="Client Logo" class="h-8 mx-auto dark:brightness-200"> -->
+                <!-- <img src="https://placehold.co/160x80/ffffff/64748b?text=LOGO" alt="Client Logo" class="h-8 mx-auto dark:brightness-200"> -->
+            </div>
         </div>
-        <p class="text-lg max-w-lg mx-auto mb-6">Unlike pop-ups, which users often close immediately, slide-in surveys feel natural. They work on e-commerce stores, SaaS platforms, blogs, and landing pages—anywhere you need real insights.</p>
-        <p class="text-lg max-w-lg mx-auto mb-6">If you’re looking for the best website survey tool, built for marketing specialists and conversion experts, Omoik is your answer.</p>
     </section>
 
-    <footer class="mt-20 py-5 text-center bg-gray-800 w-full" aria-label="Footer with newsletter subscription">
-        <!-- <h3 class="text-xl font-bold mb-3">Subscribe to Our Newsletter</h3> -->
-        <!-- <form class="flex flex-col items-center">
-          <label for="newsletter-email" class="sr-only">Email Address</label>
-          <input
-            id="newsletter-email"
-            type="email"
-            placeholder="Enter your email"
-            autocomplete="email"
-            class="p-2 rounded-md text-black mb-3"
-            required
-          >
-          <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-300 transition transform hover:scale-110">
-            Subscribe
-          </button>
-        </form> -->
-        <p class="text-sm text-gray-400 mt-5">&copy; 2025 Omoik. All rights reserved.</p>
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Why choose Omoik?</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">We prioritize what matters most to you and your users</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Privacy Feature -->
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-primary-600 dark:text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4 text-gray-900 dark:text-white">Privacy-First Approach</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        We collect only what's necessary, with full GDPR compliance and data anonymization. Your users' privacy is our top priority.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">GDPR & CCPA Compliant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Data Anonymization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Transparent Data Policies</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Accessibility Feature -->
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-universal-access text-primary-600 dark:text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4 text-gray-900 dark:text-white">Accessibility for All</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Our platform is designed to be accessible to everyone, ensuring your insights represent all users regardless of ability.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">WCAG 2.1 AA Compliant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Screen Reader Compatible</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Keyboard Navigation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Personal Support Feature -->
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-hands-helping text-primary-600 dark:text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4 text-gray-900 dark:text-white">Founder-Led Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Get direct access to our founders who are committed to your success. We're partners in your growth journey.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Direct Founder Access</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Personalized Onboarding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Strategy Consultations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">What our customers say</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Real feedback from real customers</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary-600/20 to-secondary-500/20 rounded-3xl blur-xl opacity-50"></div>
+                <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-10 md:p-14 shadow-soft overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary-50 dark:bg-primary-900/30 rounded-full opacity-50"></div>
+                    <div class="absolute right-20 bottom-20 w-32 h-32 bg-secondary-50 dark:bg-secondary-900/30 rounded-full opacity-50"></div>
+                    <div class="flex flex-col md:flex-row items-center relative">
+                        <div class="md:w-1/3 mb-10 md:mb-0 md:pr-10">
+                            <div class="w-24 h-24 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg mx-auto">
+                                <img src="https://media.licdn.com/dms/image/v2/D4E03AQFEBkSq0XKrvA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718279869975?e=1749081600&v=beta&t=ExdQAkgABK_UF0RvC7rVdHFjGO2goD1gCJDKg6QW-QE" alt="Customer" class="w-full h-full object-cover">
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white">Nicole de Boer</h4>
+                                <p class="itext-gray-500 dark:text-gray-400">Head of CRO at OMA</p>
+                            </div>
+                            <div class="flex justify-center mt-4">
+                                <div class="text-yellow-400 flex">
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 relative">
+                            <svg class="absolute -top-6 -left-6 h-16 w-16 text-primary-100 dark:text-primary-900 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                            <blockquote class="text-2xl font-light text-gray-800 dark:text-gray-200 leading-relaxed relative" style="z-index: 2;">
+                                I’ve been using this tool for about four weeks and I’m really impressed! The insights are valuable and help us enhance our website and customer journey. The dashboard is clear, user-friendly, and frequently updated. Great flexibility too. Highly recommended!
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Partnerships -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800" style="display: none;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Agency Partners</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Trusted by leading agencies worldwide</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="https://placehold.co/200x100/ffffff/64748b?text=AGENCY" alt="Agency Partner" class="h-12 dark:brightness-200">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3 text-center text-gray-900 dark:text-white">Digital Innovators</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 text-center">Strategic UX design and development partner</p>
+                    <div class="text-center">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center transition-colors">
+                            Learn more
+                            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="https://placehold.co/200x100/ffffff/64748b?text=AGENCY" alt="Agency Partner" class="h-12 dark:brightness-200">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3 text-center text-gray-900 dark:text-white">Growth Hackers</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 text-center">Conversion optimization specialists</p>
+                    <div class="text-center">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center transition-colors">
+                            Learn more
+                            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="https://placehold.co/200x100/ffffff/64748b?text=AGENCY" alt="Agency Partner" class="h-12 dark:brightness-200">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3 text-center text-gray-900 dark:text-white">UX Masters</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 text-center">User experience research and design</p>
+                    <div class="text-center">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center transition-colors">
+                            Learn more
+                            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-800">
+        <div class="absolute inset-0 noise-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Product Roadmap</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">See what we're building next</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-gray-200 dark:from-primary-800 dark:via-primary-600 dark:to-gray-700"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-16">
+                    <!-- Q1 2025 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right mb-8 md:mb-0">
+                            <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-3">Q1 2025</span>
+                            <h3 class="text-xl font-display font-semibold mb-2 text-gray-900 dark:text-white">MVP Live</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Built the MVP to enable customers to run slide-ins and gather insights.</p>
+                            <p class="text-gray-600 dark:text-gray-300">Onboard the first clients.</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-start md:justify-start">
+                            <div class="w-12 h-12 rounded-full bg-primary-600 dark:bg-primary-700 flex items-center justify-center z-10 shadow-md">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q2 2025 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1 mb-8 md:mb-0">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center z-10 shadow-md md:ml-auto">
+                                <svg class="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-1 md:order-2">
+                            <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-3">Q2 2025</span>
+                            <h3 class="text-xl font-display font-semibold mb-2 text-gray-900 dark:text-white">Enhanced Trigger Options and Feedback Collection</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Introducing advanced trigger options for surveys, including user actions and page interactions.</p>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Expanding on-page feedback collection methods to complement the slide-in.</p>
+                            <p class="text-gray-600 dark:text-gray-300">Additionally, setting up finance/administration workflows and agency account management.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Q3 2025 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right mb-8 md:mb-0">
+                            <span class="inline-block px-4 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium mb-3">Q3 2025</span>
+                            <h3 class="text-xl font-display font-semibold mb-2 text-gray-900 dark:text-white">Scaling the Product</h3>
+                            <p class="text-gray-600 dark:text-gray-300">In Q3, we will focus on improving the UX of Omoik and addressing feedback received from clients. This will be a major part of our efforts to scale the product effectively.</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-start md:justify-start">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center z-10 shadow-md">
+                                <svg class="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q4 2025 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1 mb-8 md:mb-0">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center z-10 shadow-md md:ml-auto">
+                                <svg class="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-1 md:order-2">
+                            <span class="inline-block px-4 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium mb-3">Q4 2025</span>
+                            <h3 class="text-xl font-display font-semibold mb-2 text-gray-900 dark:text-white">AI-Powered Recommendations</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Smart reports based on user behavior patterns to optimize your website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 noise-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Simple, Transparent Pricing</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">No hidden fees, no surprises</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Starter Plan -->
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-10 shadow-soft card-hover border border-gray-100 dark:border-gray-700">
+                    <h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Starter</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-display font-bold text-gray-900 dark:text-white">€49</span>
+                        <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">Perfect for small websites and startups.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Up to 10,000 monthly visitors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">1 Domain</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Basic dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">3 user seats</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Slack support</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="block w-full bg-white dark:bg-gray-800 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 text-center py-3 rounded-full font-medium hover:bg-primary-50 dark:hover:bg-gray-700 transition-colors">Request Early Access</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-10 shadow-xl card-hover border-2 border-primary-600 dark:border-primary-500 transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-primary-600 text-white px-6 py-1.5 rounded-bl-lg rounded-tr-lg text-sm font-medium">Most Popular</div>
+                    <h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Professional</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-display font-bold text-gray-900 dark:text-white">$149</span>
+                        <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">For growing businesses with more traffic.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Up to 50,000 monthly visitors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">5 Domains</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Advanced dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Unlimited user seats</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Priority email & chat support</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="block w-full bg-gradient-to-r from-primary-600 to-secondary-500 text-white text-center py-3 rounded-full font-medium hover:opacity-90 transition-opacity shadow-sm">Request Early Access</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-10 shadow-soft card-hover border border-gray-100 dark:border-gray-700">
+                    <h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Enterprise</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-display font-bold text-gray-900 dark:text-white">Custom</span>
+                        <span class="text-gray-500 dark:text-gray-400" style="display: none;">/month</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">Contact us for a tailored plan that fits your organization's needs.</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">For large organizations with high traffic.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Unlimited visitors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">24/7 dedicated support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Custom integrations</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="block w-full bg-white dark:bg-gray-800 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 text-center py-3 rounded-full font-medium hover:bg-primary-50 dark:hover:bg-gray-700 transition-colors">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Updates -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Recent Updates</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">We're constantly improving</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-soft card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <svg class="h-6 w-6 text-green-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">April 4, 2025</span>
+                            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white">Triggers</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Our new trigger system activates the slide-in at the right moment. We also did some minor UX tweaks on the software.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-soft card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <svg class="h-6 w-6 text-green-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">March 24, 2025</span>
+                            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white">Improved Insights</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Statistics and survey insights are now easier to understand. Data can also be exported as a JSON file.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-soft card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <svg class="h-6 w-6 text-green-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">March 17, 2025</span>
+                            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white">UX Improvements Back-end</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">We have enhanced the back-end of our software for better performance and scalability.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-soft card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <svg class="h-6 w-6 text-green-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">March 10, 2025</span>
+                            <h3 class="font-display font-semibold text-lg text-gray-900 dark:text-white">Custom Styling Slide-in</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">The new option to add custom CSS to the slide-in using pre-defined classes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Meet the Team</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">The people behind Omoik</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg mx-auto mb-8">
+                        <img src="images/photos/sandervolbeda.jpg" alt="Sander Volbeda" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-center mb-1 text-gray-900 dark:text-white">Sander Volbeda</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-center mb-6">Co-Founder</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-8">Experimentation specialist with 13+ years of experience in improving digital experiences.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="LinkedIn profile">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover">
+                    <div class="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg mx-auto mb-8">
+                        <img src="images/photos/roelofjanelsinga.jpeg" alt="Sarah Smith" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-center mb-1 text-gray-900 dark:text-white">Roelof Jan Elsinga</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-center mb-6">Co-Founder</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-8">Back-end developer with over 15+ years of experience. Responsable for all the systems of Omoik.</p> 
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.linkedin.com/in/roelofjanelsinga/" target="_blank" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="LinkedIn profile">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-soft card-hover" style="display: none;">
+                    <div class="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg mx-auto mb-8">
+                        <img src="https://placehold.co/300x300/ede0ff/8a2be2?text=M" alt="Michael Johnson" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-center mb-1 text-gray-900 dark:text-white">Michael Johnson</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-center mb-6">Head of Customer Success</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-8">Passionate about helping customers succeed with 10+ years of experience in user research and product development.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Twitter profile">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="LinkedIn profile">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Text Section about Slide-in Feedback -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Collect User Feedback with Non-Intrusive Slide-In Widgets</h2>
+                    <div class="prose prose-lg max-w-none dark:prose-invert">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Traditional feedback forms often disrupt the user experience, leading to low response rates and skewed data. Omoik's slide-in feedback widgets offer a modern, user-friendly alternative that captures authentic insights without interrupting the user journey.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Our slide-in widgets appear at strategic moments in the user journey, triggered by specific actions, time spent on page, or scroll depth. This contextual approach ensures you're collecting feedback when it's most relevant, increasing both the quantity and quality of responses.
+                        </p>
+                        <h3 class="text-xl font-display font-semibold mt-8 mb-4 text-gray-900 dark:text-white">Key Benefits of Slide-In Feedback Widgets</h3>
+                        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>Higher Response Rates:</strong> Non-intrusive design leads to 3-5x more responses compared to traditional pop-ups.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>Contextual Insights:</strong> Gather feedback at specific points in the user journey for more actionable data.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>Customizable Design:</strong> Match your brand's look and feel for a seamless experience.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>Improved User Experience:</strong> Respect your visitors' browsing experience while still collecting valuable feedback.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-600/20 to-secondary-500/20 rounded-3xl blur-xl opacity-50"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-soft overflow-hidden">
+                        <div class="mb-6 border-b border-gray-100 dark:border-gray-700 pb-6">
+                            <h3 class="font-display font-semibold text-lg mb-2 text-gray-900 dark:text-white">Example Slide-In Widget</h3>
+                            <p class="text-gray-600 dark:text-gray-300">This is how our non-intrusive feedback widgets appear to your users</p>
+                        </div>
+                        <div class="relative bg-gray-50 dark:bg-gray-700 rounded-xl p-6 border border-gray-100 dark:border-gray-600">
+                            <div class="slide-in-widget bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 border-l-4 border-primary-600">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h4 class="font-medium text-gray-900 dark:text-white">How was your experience today?</h4>
+                                    <button class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Close feedback widget">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="flex space-x-3 mb-4">
+                                    <button class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900 text-red-500 dark:text-red-400 flex items-center justify-center hover:bg-red-200 dark:hover:bg-red-800" aria-label="Negative feedback">
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-500 dark:text-yellow-400 flex items-center justify-center hover:bg-yellow-200 dark:hover:bg-yellow-800" aria-label="Neutral feedback">
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 text-green-500 dark:text-green-400 flex items-center justify-center hover:bg-green-200 dark:hover:bg-green-800" aria-label="Positive feedback">
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <textarea class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-lg text-sm bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200" rows="2" placeholder="Tell us more about your experience..." aria-label="Additional feedback"></textarea>
+                                <button class="mt-3 bg-primary-600 dark:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors">Submit Feedback</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800" style="display: none;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Latest from Our Blog</h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Insights, tips, and updates from the Omoik team</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Blog Post 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-soft overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/800x400/e0f7ff/00bfff?text=User+Feedback" alt="Blog Post Image" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">July 12, 2023</span>
+                            <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                            <span class="text-sm text-primary-600 dark:text-primary-400 font-medium">User Research</span>
+                        </div>
+                        <h3 class="text-xl font-display font-semibold mb-3 text-gray-900 dark:text-white">5 Ways to Increase User Feedback Response Rates</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-5">Learn proven strategies to encourage more users to share their thoughts and experiences with your product or service.</p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center transition-colors">
+                            Read Article
+                            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-soft overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/800x400/ede0ff/8a2be2?text=UX+Research" alt="Blog Post Image" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">June 28, 2023</span>
+                            <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                            <span class="text-sm text-primary-600 dark:text-primary-400 font-medium">UX Design</span>
+                        </div>
+                        <h3 class="text-xl font-display font-semibold mb-3 text-gray-900 dark:text-white">The Psychology Behind Effective Feedback Forms</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-5">Discover the psychological principles that make some feedback forms more effective than others at capturing honest user insights.</p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center transition-colors">
+                            Read Article
+                            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-primary-600 to-secondary-500 relative overflow-hidden">
+        <div class="absolute inset-0 noise-bg opacity-10"></div>
+        <div class="absolute right-0 bottom-0 w-96 h-96 bg-white/10 rounded-full -mr-20 -mb-20 blur-3xl"></div>
+        <div class="absolute left-0 top-0 w-96 h-96 bg-white/10 rounded-full -ml-20 -mt-20 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">Ready to understand your users better?</h2>
+            <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+                Join the companies that are making data-driven decisions with Omoik's real-time user insights.
+            </p>
+            <div class="flex justify-center">
+                <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors shadow-md">
+                    Request Early Access
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://omoik.com/images/omoik-logo-small.png" alt="Omoik Logo" class="h-8 w-auto mr-3">
+                        <h3 class="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400">Omoik</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Know what your users think, right when it matters.</p>
+                    <div class="flex space-x-5">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-display font-semibold mb-6">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Roadmap</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-display font-semibold mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-display font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Omoik. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Dark mode toggle script -->
+    <script>
+        // Check for saved theme preference or use the system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Toggle theme function
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // Add event listeners to theme toggle buttons
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('mobile-theme-toggle').addEventListener('click', toggleTheme);
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('open');
+            }, 10);
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+    </script>
 </body>
 </html>
