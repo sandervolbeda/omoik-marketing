@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omoik stapt over van handmatige naar automatische facturatie via Stripe. Ontdek de nieuwe betaalopties voor agencies en hun klanten.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Omoik - Overstap naar Automatische Facturatie | Nieuwe Betaalopties</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { width: 100%; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+        img, video { max-width: 100%; height: auto; display: block; }
+        
+        .cta-button { 
+            background: linear-gradient(90deg, #8a2be2, #00bfff); 
+            transition: all 0.3s ease-in-out; 
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        }
+        .cta-button:hover { 
+            background: linear-gradient(90deg, #00bfff, #8a2be2); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        .option-card {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            border: 2px solid #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: #8a2be2;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #8a2be2, #6366f1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #8a2be2, #00bfff);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-table {
+            background: #1f2937;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .pro-con-list {
+            background: #374151;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .pro-item {
+            color: #10b981;
+            margin-bottom: 0.75rem;
+        }
+
+        .con-item {
+            color: #f59e0b;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-item {
+            border-left: 3px solid #8a2be2;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #8a2be2;
+            border-radius: 50%;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .grid-cols-1 { grid-template-columns: 1fr; }
+            .step-number { width: 30px; height: 30px; font-size: 0.875rem; }
+            .highlight-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="w-full max-w-7xl mx-auto py-4 px-4 z-50 h-20 flex items-center justify-between">
+        <a href="index.html" aria-label="Ga naar homepage" class="text-white font-extrabold text-lg focus-visible:ring-2 focus-visible:ring-white px-2 flex flex-row items-center">
+            <img src="images/omoik-logo-small.png" alt="Omoik logo dat lijkt op een uil" class="mr-2" style="max-height:50px;">
+            Omoik
+        </a>
+    </nav>
+
+    <header class="text-center mt-10 p-5 w-full max-w-4xl mx-auto">
+        <div class="highlight-box fade-in">
+            <h1 class="text-4xl font-bold mb-4">🚀 Belangrijke update:<br> Automatische facturatie</h1>
+            <p class="text-xl mb-4">We stappen (geleidelijk) over van handmatige naar automatische facturatie via Stripe</p>
+            <p class="text-lg opacity-90">Effectief vanaf <strong>eind juli/begin augustus 2025</strong></p>
+        </div>
+    </header>
+
+    <div class="container max-w-7xl mx-auto px-4">
+        <!-- Timeline sectie -->
+        <section class="mt-16 p-5 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8">Wat verandert er?</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-xl mb-4">Accounts worden gedeactiveerd afhankelijk van de facturatiestatus. Deze accounts kunnen opnieuw geactiveerd worden, maar deze keer dien je je betaalgegevens op te geven in het Omoik-panel.</p> 
+            </div>
+        </section>
+
+        <!-- Twee opties sectie -->
+        <section class="mt-20 p-5 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-4">Kies je betaalmodel</h2>
+            <p class="text-center text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                We bieden twee flexibele opties die aansluiten bij verschillende bedrijfsmodellen
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Optie 1: Agency betaalt -->
+                <div class="option-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="step-number">1</div>
+                        <h3 class="text-2xl font-bold">Agency betaalt voor klant</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6 text-gray-300">
+                        Perfect voor agencies die software in hun pakketprijs hebben inbegrepen
+                    </p>
+
+                    <div class="pro-con-list">
+                        <h4 class="font-bold mb-3 text-green-400">✅ Voordelen:</h4>
+                        <ul class="space-y-2">
+                            <li class="pro-item">• Snelle setup - geen wachten op klant</li>
+                            <li class="pro-item">• Alle abonnementen op één factuur</li>
+                            <li class="pro-item">• Volledige controle over facturatie</li>
+                            <li class="pro-item">• Klant krijgt toegang via gebruikersbeheer</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-900 bg-opacity-50 p-4 rounded-lg mt-4">
+                        <h5 class="font-bold text-yellow-300 mb-2">💡 Nieuwe feature: Pauze functie</h5>
+                        <p class="text-sm text-gray-300">
+                            Binnenkort kun je klantaccounts tijdelijk pauzeren (max. 3 maanden) 
+                            terwijl je toegang houdt tot alle data.
+                        </p>
+                    </div>
+
+                    <h4 class="font-bold mt-6 mb-3">Hoe werkt het?</h4>
+                    <ol class="space-y-2 text-sm text-gray-300">
+                        <li>1. Maak een nieuw team aan onder je bedrijfsaccount</li>
+                        <li>2. Elk team = één klant</li>
+                        <li>3. Nodig klant uit via gebruikersbeheer</li>
+                        <li>4. Team wordt meegenomen in maandelijkse facturatie</li>
+                    </ol>
+                </div>
+
+                <!-- Optie 2: Klant betaalt zelf -->
+                <div class="option-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="step-number">2</div>
+                        <h3 class="text-2xl font-bold">Klant betaalt zelf</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6 text-gray-300">
+                        Ideaal wanneer software niet inbegrepen is of klant eigenaarschap wil
+                    </p>
+
+                    <div class="pro-con-list">
+                        <h4 class="font-bold mb-3 text-green-400">✅ Voordelen:</h4>
+                        <ul class="space-y-2">
+                            <li class="pro-item">• Klant heeft volledige controle</li>
+                            <li class="pro-item">• Automatische toegang voor agency</li>
+                            <li class="pro-item">• Klant beheert eigen data</li>
+                            <li class="pro-item">• Partner systeem zorgt voor toegang</li>
+                        </ul>
+                        
+                        <h4 class="font-bold mb-3 mt-4 text-yellow-400">⚠️ Let op:</h4>
+                        <ul class="space-y-2">
+                            <li class="con-item">• Afhankelijk van klant voor setup</li>
+                            <li class="con-item">• Klant beheert betaalgegevens</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="font-bold mt-6 mb-3">Hoe werkt het?</h4>
+                    <ol class="space-y-2 text-sm text-gray-300">
+                        <li>1. Nodig klant uit via partner systeem</li>
+                        <li>2. Klant maakt account aan bij Omoik</li>
+                        <li>3. Klant voegt betaalgegevens toe</li>
+                        <li>4. Jij krijgt automatisch toegang tot hun omgeving</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing tiers placeholder -->
+        <section class="mt-20 p-5 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-4">Prijsopties</h2>
+            <p class="text-center text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Kies het abonnement dat bij jouw behoeften past
+            </p>
+            
+            <!-- PLACEHOLDER: Hier kunnen de nieuwe pricing tiers worden toegevoegd -->
+            <div class="max-w-6xl mx-auto bg-gray-800 border-2 border-dashed border-gray-600 rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-gray-400">🏗️ Pricing Tiers</h3>
+                <p class="text-gray-500">
+                    Hier komen de nieuwe abonnement opties te staan.<br>
+                    Deze sectie wordt later aangevuld met de specifieke prijzen en features.
+                </p>
+            </div>
+        </section>
+
+        <!-- Vergelijkingstabel -->
+        <section class="mt-20 p-5 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-8">Vergelijking betaalmodellen</h2>
+            <div class="max-w-4xl mx-auto comparison-table">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="p-4 font-bold">Aspect</th>
+                            <th class="p-4 font-bold text-purple-300">Agency betaalt</th>
+                            <th class="p-4 font-bold text-blue-300">Klant betaalt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-medium">Setup snelheid</td>
+                            <td class="p-4 text-green-400">✅ Zeer snel</td>
+                            <td class="p-4 text-yellow-400">⚠️ Afhankelijk van klant</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-medium">Data eigenaarschap</td>
+                            <td class="p-4 text-yellow-400">⚠️ Via agency account</td>
+                            <td class="p-4 text-green-400">✅ Volledig bij klant</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-medium">Facturatie controle</td>
+                            <td class="p-4 text-green-400">✅ Agency beheert alles</td>
+                            <td class="p-4 text-yellow-400">⚠️ Klant beheert</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-medium">Toegang voor agency</td>
+                            <td class="p-4 text-green-400">✅ Direct beschikbaar</td>
+                            <td class="p-4 text-green-400">✅ Automatisch via partner systeem</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-medium">Geschikt voor</td>
+                            <td class="p-4 text-gray-300">All-inclusive pakketten</td>
+                            <td class="p-4 text-gray-300">À la carte diensten</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Wat je kunt verwachten -->
+        <section class="mt-20 p-5 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-4">Wat je kunt verwachten</h2>
+            <p class="text-center text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Het nieuwe systeem brengt vele verbeteringen met zich mee
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2">Snellere onboarding</h3>
+                    <p class="text-gray-300">Klanten binnen minuten live in plaats van dagen wachten</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Betere controle</h3>
+                    <p class="text-gray-300">Real-time inzicht in al je abonnementen en facturatie</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">💳</div>
+                    <h3 class="text-xl font-bold mb-2">Flexibele betaling</h3>
+                    <p class="text-gray-300">Stripe zorgt voor veilige en betrouwbare betalingsverwerking</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">Duidelijke facturen</h3>
+                    <p class="text-gray-300">Overzichtelijke facturen met alle abonnementen per klant</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold mb-2">Automatische hernieuwing</h3>
+                    <p class="text-gray-300">Geen handmatige verlengingen meer nodig</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <div class="text-3xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">Veilig & compliant</h3>
+                    <p class="text-gray-300">PCI-DSS gecertificeerd met enterprise-level beveiliging</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="mt-20 mb-16 p-5 text-center fade-in">
+            <div class="highlight-box max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Klaar voor de overstap?</h2>
+                <p class="text-xl mb-6">
+                    Log in op je admin panel om je betaalgegevens in te stellen en kies je gewenste betaalmodel
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://app.omoik.com/dashboard/billing/subscription" target="_blank" class="cta-button text-white px-8 py-4 rounded-full font-bold text-lg inline-block">
+                        Update betaalgegevens
+                    </a>
+                    <a href="https://www.linkedin.com/in/sandervolbeda/" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-bold text-lg inline-block transition-colors">
+                        Vragen? Contact Sander
+                    </a>
+                </div>
+                <p class="mt-4 text-sm opacity-80">
+                    Effectief vanaf eind juli/begin augustus 2025
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Animate elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+
+    <footer class="mt-16 text-center text-gray-400 p-6 bg-gray-800">
+        <p class="mb-3">&copy; 2025 Omoik. Alle rechten voorbehouden.</p> 
+        <p>Een product door <a href="https://roelofjanelsinga.com/" target="_blank" class="underline hover:text-purple-400 transition-colors">Roelof Jan Elsinga</a> en <a href="https://sandervolbeda.com/" target="_blank" class="underline hover:text-purple-400 transition-colors">Sander Volbeda</a>.</p>
+    </footer>
+</body>
+</html>
